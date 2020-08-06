@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>GeneratedSequenceBase<'T>FSharp.Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/License.txt">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<ul list-style-type="none">
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-generatedsequencebase-1.html">
+      GeneratedSequenceBase<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-iprovidednamespace.html">
+      IProvidedNamespace
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-itypeprovider.html">
+      ITypeProvider
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-itypeprovider2.html">
+      ITypeProvider2
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-measureinverse-1.html">
+      MeasureInverse<'Measure>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-measureone.html">
+      MeasureOne
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-measureproduct-2.html">
+      MeasureProduct<'Measure1, 'Measure2>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-runtimehelpers.html">
+      RuntimeHelpers
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderassemblyattribute.html">
+      TypeProviderAssemblyAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderattribute.html">
+      TypeProviderAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderconfig.html">
+      TypeProviderConfig
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderdefinitionlocationattribute.html">
+      TypeProviderDefinitionLocationAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeprovidereditorhidemethodsattribute.html">
+      TypeProviderEditorHideMethodsAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeprovidertypeattributes.html">
+      TypeProviderTypeAttributes
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderxmldocattribute.html">
+      TypeProviderXmlDocAttribute
+    </a>
+  </li>
+</ul>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    GeneratedSequenceBase<'T> Type
+  </h1>
+  <p>
+    Namespace: FSharp.Core.CompilerServices
+  </p>
+  <p>
+    Assembly: FSharp.Core.dll
+  </p>
+  <p>
+    Base Type: 
+    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+  </p>
+  <p>
+    All Interfaces: 
+  </p>
+  <ul>
+    <li>
+      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;'T&gt;</span></code>
+    </li>
+    <li>
+      <code><a href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></code>
+    </li>
+    <li>
+      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerator">IEnumerator</a></code>
+    </li>
+    <li>
+      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;'T&gt;</span></code>
+    </li>
+    <li>
+      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></code>
+    </li>
+  </ul>
+  <div class="fsdocs-xmldoc">
+    <p class='fsdocs-summary'>The F# compiler emits implementations of this type for compiled sequence expressions.</p>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Constructors
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Constructor
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="( .ctor )">
+            <div>
+              <code onmouseout="hideTip(event, '1464', 1464)" onmouseover="showTip(event, '1464', 1464)">
+                <code><span>GeneratedSequenceBase<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1464">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GeneratedSequenceBase<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-generatedsequencebase-1.html">GeneratedSequenceBase</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The F# compiler emits implementations of this type for compiled sequence expressions.</p><p class='fsdocs-returns'><p>Returns: A new sequence generator for the expression.</p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-generatedsequencebase-1.html">GeneratedSequenceBase</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/seqcore.fs#L355-355" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Instance members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Instance member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="CheckClose">
+            <div>
+              <code onmouseout="hideTip(event, '1465', 1465)" onmouseover="showTip(event, '1465', 1465)">
+                <code><span>this.CheckClose</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1465">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.CheckClose</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  abstract
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The F# compiler emits implementations of this type for compiled sequence expressions.</p>
+            <br/>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/seqcore.fs#L362-362" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Close">
+            <div>
+              <code onmouseout="hideTip(event, '1466', 1466)" onmouseover="showTip(event, '1466', 1466)">
+                <code><span>this.Close<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1466">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Close<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  Modifiers: 
+                  abstract
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The F# compiler emits implementations of this type for compiled sequence expressions.</p>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/seqcore.fs#L361-361" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenerateNext">
+            <div>
+              <code onmouseout="hideTip(event, '1467', 1467)" onmouseover="showTip(event, '1467', 1467)">
+                <code><span>this.GenerateNext<span><span>(<span>result</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1467">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.GenerateNext<span><span>(<span>result</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        result
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byref-1.html">byref</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;'T&gt;</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  abstract
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The F# compiler emits implementations of this type for compiled sequence expressions.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>result</span></dt><dd><p>A reference to the sequence.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A 0, 1, and 2 respectively indicate Stop, Yield, and Goto conditions for the sequence generator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  result
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byref-1.html">byref</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;'T&gt;</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/seqcore.fs#L360-360" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GetFreshEnumerator">
+            <div>
+              <code onmouseout="hideTip(event, '1468', 1468)" onmouseover="showTip(event, '1468', 1468)">
+                <code><span>this.GetFreshEnumerator<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1468">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.GetFreshEnumerator<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  abstract
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The F# compiler emits implementations of this type for compiled sequence expressions.</p><p class='fsdocs-returns'><p>Returns: A new enumerator for the sequence.</p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/seqcore.fs#L359-359" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="LastGenerated">
+            <div>
+              <code onmouseout="hideTip(event, '1469', 1469)" onmouseover="showTip(event, '1469', 1469)">
+                <code><span>this.LastGenerated</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1469">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.LastGenerated</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                  Modifiers: 
+                  abstract
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The F# compiler emits implementations of this type for compiled sequence expressions.</p>
+            <br/>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/seqcore.fs#L363-363" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/'</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

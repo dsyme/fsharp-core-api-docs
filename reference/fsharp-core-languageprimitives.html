@@ -1,0 +1,4835 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>LanguagePrimitivesFSharp.Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/License.txt">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<ul list-style-type="none">
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html">
+      'T array
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bigint.html">
+      bigint
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">
+      bool
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byte.html">
+      byte
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-char.html">
+      char
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal.html">
+      decimal
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-double.html">
+      double
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-exn.html">
+      exn
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float.html">
+      float
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32.html">
+      float32
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">
+      int
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16.html">
+      int16
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int32.html">
+      int32
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64.html">
+      int64
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int8.html">
+      int8
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-nativeint.html">
+      nativeint
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">
+      obj
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-ref-1.html">
+      'T ref
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte.html">
+      sbyte
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-single.html">
+      single
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">
+      string
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint.html">
+      uint
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint16.html">
+      uint16
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint32.html">
+      uint32
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint64.html">
+      uint64
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint8.html">
+      uint8
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unativeint.html">
+      unativeint
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">
+      unit
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-extratopleveloperators.html">
+      ExtraTopLevelOperators
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html">
+      Operators
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-optionmodule.html">
+      Option
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">
+      'T option
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-valueoption.html">
+      ValueOption
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voption-1.html">
+      'T voption
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfmodule.html">
+      Printf
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-stringmodule.html">
+      String
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-2.html">
+      Choice<'T1, 'T2>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-3.html">
+      Choice<'T1, 'T2, 'T3>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-4.html">
+      Choice<'T1, 'T2, 'T3, 'T4>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-5.html">
+      Choice<'T1, 'T2, 'T3, 'T4, 'T5>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-6.html">
+      Choice<'T1, 'T2, 'T3, 'T4, 'T5, 'T6>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-7.html">
+      Choice<'T1, 'T2, 'T3, 'T4, 'T5, 'T6, 'T7>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-resultmodule.html">
+      Result
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpresult-2.html">
+      Result<'T, 'TError>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal-1.html">
+      decimal<'Measure>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float-1.html">
+      float<'Measure>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32-1.html">
+      float32<'Measure>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int-1.html">
+      int<'Measure>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16-1.html">
+      int16<'Measure>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64-1.html">
+      int64<'Measure>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte-1.html">
+      sbyte<'Measure>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byref-1.html">
+      byref<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byref-2.html">
+      byref<'T, 'Kind>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-byrefkinds.html">
+      ByRefKinds
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-ilsigptr-1.html">
+      ilsigptr<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-inref-1.html">
+      inref<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-nativeptr-1.html">
+      nativeptr<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-outref-1.html">
+      outref<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-voidptr.html">
+      voidptr
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-abstractclassattribute.html">
+      AbstractClassAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-allownullliteralattribute.html">
+      AllowNullLiteralAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-autoopenattribute.html">
+      AutoOpenAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-autoserializableattribute.html">
+      AutoSerializableAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-classattribute.html">
+      ClassAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-clieventattribute.html">
+      CLIEventAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-climutableattribute.html">
+      CLIMutableAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-comparisonconditionalonattribute.html">
+      ComparisonConditionalOnAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilationargumentcountsattribute.html">
+      CompilationArgumentCountsAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilationmappingattribute.html">
+      CompilationMappingAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilationrepresentationattribute.html">
+      CompilationRepresentationAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilationrepresentationflags.html">
+      CompilationRepresentationFlags
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilationsourcenameattribute.html">
+      CompilationSourceNameAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilednameattribute.html">
+      CompiledNameAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilermessageattribute.html">
+      CompilerMessageAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-customcomparisonattribute.html">
+      CustomComparisonAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-customequalityattribute.html">
+      CustomEqualityAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-customoperationattribute.html">
+      CustomOperationAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-defaultaugmentationattribute.html">
+      DefaultAugmentationAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-defaultvalueattribute.html">
+      DefaultValueAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-entrypointattribute.html">
+      EntryPointAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-equalityconditionalonattribute.html">
+      EqualityConditionalOnAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-experimentalattribute.html">
+      ExperimentalAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpinterfacedataversionattribute.html">
+      FSharpInterfaceDataVersionAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-generalizablevalueattribute.html">
+      GeneralizableValueAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-interfaceattribute.html">
+      InterfaceAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-literalattribute.html">
+      LiteralAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-measureannotatedabbreviationattribute.html">
+      MeasureAnnotatedAbbreviationAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-measureattribute.html">
+      MeasureAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-nocomparisonattribute.html">
+      NoComparisonAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-nodynamicinvocationattribute.html">
+      NoDynamicInvocationAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-noequalityattribute.html">
+      NoEqualityAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-optionalargumentattribute.html">
+      OptionalArgumentAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-projectionparameterattribute.html">
+      ProjectionParameterAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-referenceequalityattribute.html">
+      ReferenceEqualityAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-reflecteddefinitionattribute.html">
+      ReflectedDefinitionAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-requirequalifiedaccessattribute.html">
+      RequireQualifiedAccessAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-requiresexplicittypeargumentsattribute.html">
+      RequiresExplicitTypeArgumentsAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sealedattribute.html">
+      SealedAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sourceconstructflags.html">
+      SourceConstructFlags
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-structattribute.html">
+      StructAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-structuralcomparisonattribute.html">
+      StructuralComparisonAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-structuralequalityattribute.html">
+      StructuralEqualityAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-structuredformatdisplayattribute.html">
+      StructuredFormatDisplayAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unverifiableattribute.html">
+      UnverifiableAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-volatilefieldattribute.html">
+      VolatileFieldAttribute
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-format-4.html">
+      Format<'Printer, 'State, 'Residue, 'Result>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-format-5.html">
+      Format<'Printer, 'State, 'Residue, 'Result, 'Tuple>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpfunc-2.html">
+      FSharpFunc<'T, 'U>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharptypefunc.html">
+      FSharpTypeFunc
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-funcconvert.html">
+      FuncConvert
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-languageprimitives.html">
+      LanguagePrimitives
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-matchfailureexception.html">
+      MatchFailureException
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-numericliterals.html">
+      NumericLiterals
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-optimizedclosures.html">
+      OptimizedClosures
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfformat-4.html">
+      PrintfFormat<'Printer, 'State, 'Residue, 'Result>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-printfformat-5.html">
+      PrintfFormat<'Printer, 'State, 'Residue, 'Result, 'Tuple>
+    </a>
+  </li>
+</ul>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    LanguagePrimitives Module
+  </h1>
+  <p>
+    Namespace: FSharp.Core
+  </p>
+  <p>
+    Assembly: FSharp.Core.dll
+  </p>
+  <div class="fsdocs-xmldoc">
+    <p class='fsdocs-summary'>Language primitives associated with the F# language</p>
+  </div>
+  <div>
+    <h3>
+      Nested modules
+    </h3>
+    <table class="table outer-list fsdocs-entity-list">
+      <thead>
+        <tr>
+          <td>
+            Modules
+          </td>
+          <td>
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <a name="ErrorStrings">
+              <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-languageprimitives-errorstrings.html">
+                ErrorStrings
+              </a>
+            </a>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>For compiler use only</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <a name="HashCompare">
+              <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-languageprimitives-hashcompare.html">
+                HashCompare
+              </a>
+            </a>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The F# compiler emits calls to some of the functions in this module as part of the compiled form of some language constructs</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <a name="IntrinsicFunctions">
+              <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-languageprimitives-intrinsicfunctions.html">
+                IntrinsicFunctions
+              </a>
+            </a>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The F# compiler emits calls to some of the functions in this module as part of the compiled form of some language constructs</p>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-entity-name">
+            <a name="IntrinsicOperators">
+              <a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-languageprimitives-intrinsicoperators.html">
+                IntrinsicOperators
+              </a>
+            </a>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The F# compiler emits calls to some of the functions in this module as part of the compiled form of some language constructs</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="AdditionDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '485', 485)" onmouseover="showTip(event, '485', 485)">
+                <code><span>AdditionDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="485">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>AdditionDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the '+' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2542-2542" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="BitwiseAndDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '486', 486)" onmouseover="showTip(event, '486', 486)">
+                <code><span>BitwiseAndDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="486">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>BitwiseAndDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the '&&&' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2734-2734" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="BitwiseOrDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '487', 487)" onmouseover="showTip(event, '487', 487)">
+                <code><span>BitwiseOrDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="487">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>BitwiseOrDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the '|||' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2748-2748" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="CheckedAdditionDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '488', 488)" onmouseover="showTip(event, '488', 488)">
+                <code><span>CheckedAdditionDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="488">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>CheckedAdditionDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the checked '+' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2641-2641" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="CheckedMultiplyDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '489', 489)" onmouseover="showTip(event, '489', 489)">
+                <code><span>CheckedMultiplyDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="489">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>CheckedMultiplyDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the checked '*' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2677-2677" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="CheckedSubtractionDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '490', 490)" onmouseover="showTip(event, '490', 490)">
+                <code><span>CheckedSubtractionDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="490">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>CheckedSubtractionDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the checked '-' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2660-2660" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="CheckedUnaryNegationDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '491', 491)" onmouseover="showTip(event, '491', 491)">
+                <code><span>CheckedUnaryNegationDynamic&#32;<span>value</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="491">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>CheckedUnaryNegationDynamic&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the checked unary '-' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2694-2694" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="DecimalWithMeasure">
+            <div>
+              <code onmouseout="hideTip(event, '492', 492)" onmouseover="showTip(event, '492', 492)">
+                <code><span>DecimalWithMeasure&#32;<span>arg1</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="492">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>DecimalWithMeasure&#32;<span>arg1</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal.html">decimal</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal-1.html">decimal</a>&lt;'Measure&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates a decimal value with units-of-measure</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>decimal</span></dt><dd><p>The input decimal.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The decimal with units of measure.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal.html">decimal</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-decimal-1.html">decimal</a>&lt;'Measure&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2254-2254" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="DivideByInt">
+            <div>
+              <code onmouseout="hideTip(event, '493', 493)" onmouseover="showTip(event, '493', 493)">
+                <code><span>DivideByInt&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="493">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>DivideByInt&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>^T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>^T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Divides a value by an integer.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>x</span></dt><dd><p>The input value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>y</span></dt><dd><p>The input int.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The division result.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>^T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>^T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L3141-3141" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="DivideByIntDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '494', 494)" onmouseover="showTip(event, '494', 494)">
+                <code><span>DivideByIntDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="494">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>DivideByIntDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations for the DivideByInt primitive.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L3135-3135" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="DivisionDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '495', 495)" onmouseover="showTip(event, '495', 495)">
+                <code><span>DivisionDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="495">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>DivisionDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the '/' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2595-2595" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="EnumOfValue">
+            <div>
+              <code onmouseout="hideTip(event, '496', 496)" onmouseover="showTip(event, '496', 496)">
+                <code><span>EnumOfValue&#32;<span>value</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="496">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>EnumOfValue&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'Enum</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Build an enum value from an underlying value</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>value</span></dt><dd><p>The input value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The value as an enumeration.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'Enum</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2236-2236" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="EnumToValue">
+            <div>
+              <code onmouseout="hideTip(event, '497', 497)" onmouseover="showTip(event, '497', 497)">
+                <code><span>EnumToValue&#32;<span>enum</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="497">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>EnumToValue&#32;<span>enum</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        enum
+                      </b>
+                      :
+                      <code>'Enum</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Get the underlying value for an enum value</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>enum</span></dt><dd><p>The input enum.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The enumeration as a value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  enum
+                </span>
+                :
+                <code>'Enum</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2242-2242" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="EqualityDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '498', 498)" onmouseover="showTip(event, '498', 498)">
+                <code><span>EqualityDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="498">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>EqualityDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations related to the '=' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L3097-3097" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ExclusiveOrDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '499', 499)" onmouseover="showTip(event, '499', 499)">
+                <code><span>ExclusiveOrDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="499">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ExclusiveOrDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations related to the '^^^' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2762-2762" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ExplicitDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '500', 500)" onmouseover="showTip(event, '500', 500)">
+                <code><span>ExplicitDynamic&#32;<span>value</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="500">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ExplicitDynamic&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations related to conversion operators.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2790-2790" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FastGenericComparer">
+            <div>
+              <code onmouseout="hideTip(event, '501', 501)" onmouseover="showTip(event, '501', 501)">
+                <code><span>FastGenericComparer&#32;<span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="501">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastGenericComparer&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icomparer-1">IComparer</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Make an F# comparer object for the given type</p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icomparer-1">IComparer</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2201-2201" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FastGenericComparerFromTable">
+            <div>
+              <code onmouseout="hideTip(event, '502', 502)" onmouseover="showTip(event, '502', 502)">
+                <code><span>FastGenericComparerFromTable&#32;<span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="502">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastGenericComparerFromTable&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icomparer-1">IComparer</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Make an F# comparer object for the given type</p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.icomparer-1">IComparer</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2198-2198" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FastGenericEqualityComparer">
+            <div>
+              <code onmouseout="hideTip(event, '503', 503)" onmouseover="showTip(event, '503', 503)">
+                <code><span>FastGenericEqualityComparer&#32;<span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="503">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastGenericEqualityComparer&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Make an F# hash/equality object for the given type</p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2079-2079" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FastGenericEqualityComparerFromTable">
+            <div>
+              <code onmouseout="hideTip(event, '504', 504)" onmouseover="showTip(event, '504', 504)">
+                <code><span>FastGenericEqualityComparerFromTable&#32;<span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="504">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastGenericEqualityComparerFromTable&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Make an F# hash/equality object for the given type</p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2075-2075" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FastLimitedGenericEqualityComparer">
+            <div>
+              <code onmouseout="hideTip(event, '505', 505)" onmouseover="showTip(event, '505', 505)">
+                <code><span>FastLimitedGenericEqualityComparer&#32;<span>limit</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="505">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FastLimitedGenericEqualityComparer&#32;<span>limit</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        limit
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Make an F# hash/equality object for the given type using node-limited hashing when hashing F#
+ records, lists and union types.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>limit</span></dt><dd><p>The input limit on the number of nodes.</p></dd></dl><p class='fsdocs-returns'><p>Returns: System.Collections.Generic.IEqualityComparer<'T></p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  limit
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.iequalitycomparer-1">IEqualityComparer</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2108-2108" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Float32WithMeasure">
+            <div>
+              <code onmouseout="hideTip(event, '506', 506)" onmouseover="showTip(event, '506', 506)">
+                <code><span>Float32WithMeasure&#32;<span>arg1</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="506">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Float32WithMeasure&#32;<span>arg1</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32.html">float32</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32-1.html">float32</a>&lt;'Measure&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates a float32 value with units-of-measure</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>float32</span></dt><dd><p>The input float.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The float with units-of-measure.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32.html">float32</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float32-1.html">float32</a>&lt;'Measure&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2253-2253" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FloatWithMeasure">
+            <div>
+              <code onmouseout="hideTip(event, '507', 507)" onmouseover="showTip(event, '507', 507)">
+                <code><span>FloatWithMeasure&#32;<span>arg1</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="507">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FloatWithMeasure&#32;<span>arg1</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float.html">float</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float-1.html">float</a>&lt;'Measure&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates a float value with units-of-measure</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>float</span></dt><dd><p>The input float.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The float with units-of-measure.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float.html">float</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-float-1.html">float</a>&lt;'Measure&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2252-2252" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericComparer">
+            <div>
+              <code onmouseout="hideTip(event, '508', 508)" onmouseover="showTip(event, '508', 508)">
+                <code><span>GenericComparer&#32;<span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="508">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericComparer&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A static F# comparer object</p>
+            <br/>
+            Return Type: 
+            <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2006-2006" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericComparison">
+            <div>
+              <code onmouseout="hideTip(event, '509', 509)" onmouseover="showTip(event, '509', 509)">
+                <code><span>GenericComparison&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="509">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericComparison&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Compare two values </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1974-1974" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericComparisonWithComparer">
+            <div>
+              <code onmouseout="hideTip(event, '510', 510)" onmouseover="showTip(event, '510', 510)">
+                <code><span>GenericComparisonWithComparer&#32;<span>comp&#32;e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="510">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericComparisonWithComparer&#32;<span>comp&#32;e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        comp
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Compare two values. May be called as a recursive case from an implementation of System.IComparable to
+ ensure consistent NaN comparison semantics.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>comp</span></dt><dd><p>The function to compare the values.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  comp
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.icomparer">IComparer</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1976-1976" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericEquality">
+            <div>
+              <code onmouseout="hideTip(event, '511', 511)" onmouseover="showTip(event, '511', 511)">
+                <code><span>GenericEquality&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="511">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericEquality&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Compare two values for equality using partial equivalence relation semantics ([nan] <> [nan])</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1968-1968" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericEqualityComparer">
+            <div>
+              <code onmouseout="hideTip(event, '512', 512)" onmouseover="showTip(event, '512', 512)">
+                <code><span>GenericEqualityComparer&#32;<span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="512">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericEqualityComparer&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Return an F# comparer object suitable for hashing and equality. This hashing behaviour
+ of the returned comparer is not limited by an overall node count when hashing F#
+ records, lists and union types.</p>
+            <br/>
+            Return Type: 
+            <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2008-2008" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericEqualityER">
+            <div>
+              <code onmouseout="hideTip(event, '513', 513)" onmouseover="showTip(event, '513', 513)">
+                <code><span>GenericEqualityER&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="513">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericEqualityER&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Compare two values for equality using equivalence relation semantics ([nan] = [nan])</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1970-1970" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericEqualityERComparer">
+            <div>
+              <code onmouseout="hideTip(event, '514', 514)" onmouseover="showTip(event, '514', 514)">
+                <code><span>GenericEqualityERComparer&#32;<span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="514">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericEqualityERComparer&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Return an F# comparer object suitable for hashing and equality. This hashing behaviour
+ of the returned comparer is not limited by an overall node count when hashing F#
+ records, lists and union types. This equality comparer has equivalence 
+ relation semantics ([nan] = [nan]).</p>
+            <br/>
+            Return Type: 
+            <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2010-2010" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericEqualityWithComparer">
+            <div>
+              <code onmouseout="hideTip(event, '515', 515)" onmouseover="showTip(event, '515', 515)">
+                <code><span>GenericEqualityWithComparer&#32;<span>comp&#32;e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="515">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericEqualityWithComparer&#32;<span>comp&#32;e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        comp
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Compare two values for equality</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>comp</span></dt><dd><p></p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  comp
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1972-1972" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericGreaterOrEqual">
+            <div>
+              <code onmouseout="hideTip(event, '516', 516)" onmouseover="showTip(event, '516', 516)">
+                <code><span>GenericGreaterOrEqual&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="516">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericGreaterOrEqual&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Compare two values   </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1984-1984" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericGreaterThan">
+            <div>
+              <code onmouseout="hideTip(event, '517', 517)" onmouseover="showTip(event, '517', 517)">
+                <code><span>GenericGreaterThan&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="517">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericGreaterThan&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Compare two values   </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1980-1980" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericHash">
+            <div>
+              <code onmouseout="hideTip(event, '518', 518)" onmouseover="showTip(event, '518', 518)">
+                <code><span>GenericHash&#32;<span>obj</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="518">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericHash&#32;<span>obj</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        obj
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Hash a value according to its structure. This hash is not limited by an overall node count when hashing F#
+ records, lists and union types.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>obj</span></dt><dd><p>The input object.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The hashed value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  obj
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2012-2012" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericHashWithComparer">
+            <div>
+              <code onmouseout="hideTip(event, '519', 519)" onmouseover="showTip(event, '519', 519)">
+                <code><span>GenericHashWithComparer&#32;<span>comparer&#32;obj</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="519">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericHashWithComparer&#32;<span>comparer&#32;obj</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        comparer
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        obj
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Recursively hash a part of a value according to its structure. </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>comparer</span></dt><dd><p>The comparison function.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>obj</span></dt><dd><p>The input object.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The hashed value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  comparer
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.collections.iequalitycomparer">IEqualityComparer</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  obj
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2016-2016" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericLessOrEqual">
+            <div>
+              <code onmouseout="hideTip(event, '520', 520)" onmouseover="showTip(event, '520', 520)">
+                <code><span>GenericLessOrEqual&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="520">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericLessOrEqual&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Compare two values   </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1982-1982" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericLessThan">
+            <div>
+              <code onmouseout="hideTip(event, '521', 521)" onmouseover="showTip(event, '521', 521)">
+                <code><span>GenericLessThan&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="521">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericLessThan&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Compare two values   </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1978-1978" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericLimitedHash">
+            <div>
+              <code onmouseout="hideTip(event, '522', 522)" onmouseover="showTip(event, '522', 522)">
+                <code><span>GenericLimitedHash&#32;<span>limit&#32;obj</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="522">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericLimitedHash&#32;<span>limit&#32;obj</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        limit
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        obj
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Hash a value according to its structure. Use the given limit to restrict the hash when hashing F#
+ records, lists and union types.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>limit</span></dt><dd><p>The limit on the number of nodes.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>obj</span></dt><dd><p>The input object.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The hashed value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  limit
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  obj
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2014-2014" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericMaximum">
+            <div>
+              <code onmouseout="hideTip(event, '523', 523)" onmouseover="showTip(event, '523', 523)">
+                <code><span>GenericMaximum&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="523">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericMaximum&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Take the maximum of two values structurally according to the order given by GenericComparison</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The maximum value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1993-1993" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericMinimum">
+            <div>
+              <code onmouseout="hideTip(event, '524', 524)" onmouseover="showTip(event, '524', 524)">
+                <code><span>GenericMinimum&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="524">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericMinimum&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Take the minimum of two values structurally according to the order given by GenericComparison</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The minimum value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1988-1988" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericOne">
+            <div>
+              <code onmouseout="hideTip(event, '525', 525)" onmouseover="showTip(event, '525', 525)">
+                <code><span>GenericOne&#32;<span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="525">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericOne&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>^T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Resolves to the value 'one' for any primitive numeric type or any type with a static member called 'One'</p>
+            <br/>
+            Return Type: 
+            <code>^T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2461-2461" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericOneDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '526', 526)" onmouseover="showTip(event, '526', 526)">
+                <code><span>GenericOneDynamic&#32;<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="526">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericOneDynamic&#32;<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        ()
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Resolves to the value 'one' for any primitive numeric type or any type with a static member called 'One'.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  ()
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2438-2438" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericZero">
+            <div>
+              <code onmouseout="hideTip(event, '527', 527)" onmouseover="showTip(event, '527', 527)">
+                <code><span>GenericZero&#32;<span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="527">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericZero&#32;<span></span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>^T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Resolves to the zero value for any primitive numeric type or any type with a static member called 'Zero'</p>
+            <br/>
+            Return Type: 
+            <code>^T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2440-2440" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GenericZeroDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '528', 528)" onmouseover="showTip(event, '528', 528)">
+                <code><span>GenericZeroDynamic&#32;<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="528">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GenericZeroDynamic&#32;<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        ()
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Resolves to the zero value for any primitive numeric type or any type with a static member called 'Zero'.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  ()
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2437-2437" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GreaterThanDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '529', 529)" onmouseover="showTip(event, '529', 529)">
+                <code><span>GreaterThanDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="529">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GreaterThanDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations related to the '>' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L3040-3040" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GreaterThanOrEqualDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '530', 530)" onmouseover="showTip(event, '530', 530)">
+                <code><span>GreaterThanOrEqualDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="530">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>GreaterThanOrEqualDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations related to the '>=' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L3078-3078" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="InequalityDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '531', 531)" onmouseover="showTip(event, '531', 531)">
+                <code><span>InequalityDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="531">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>InequalityDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations related to the '=' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L3116-3116" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Int16WithMeasure">
+            <div>
+              <code onmouseout="hideTip(event, '532', 532)" onmouseover="showTip(event, '532', 532)">
+                <code><span>Int16WithMeasure&#32;<span>arg1</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="532">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Int16WithMeasure&#32;<span>arg1</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16.html">int16</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16-1.html">int16</a>&lt;'Measure&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an int16 value with units-of-measure</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>int16</span></dt><dd><p>The input int16.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The int16 with units-of-measure.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16.html">int16</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int16-1.html">int16</a>&lt;'Measure&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2256-2256" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Int32WithMeasure">
+            <div>
+              <code onmouseout="hideTip(event, '533', 533)" onmouseover="showTip(event, '533', 533)">
+                <code><span>Int32WithMeasure&#32;<span>arg1</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="533">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Int32WithMeasure&#32;<span>arg1</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int-1.html">int</a>&lt;'Measure&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an int32 value with units-of-measure</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>int</span></dt><dd><p>The input int.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The int with units of measure.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int-1.html">int</a>&lt;'Measure&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2255-2255" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Int64WithMeasure">
+            <div>
+              <code onmouseout="hideTip(event, '534', 534)" onmouseover="showTip(event, '534', 534)">
+                <code><span>Int64WithMeasure&#32;<span>arg1</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="534">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Int64WithMeasure&#32;<span>arg1</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64.html">int64</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64-1.html">int64</a>&lt;'Measure&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an int64 value with units-of-measure</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>int64</span></dt><dd><p>The input int64.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The int64 with units of measure.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64.html">int64</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64-1.html">int64</a>&lt;'Measure&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2258-2258" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="LeftShiftDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '535', 535)" onmouseover="showTip(event, '535', 535)">
+                <code><span>LeftShiftDynamic&#32;<span>value&#32;shift</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="535">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>LeftShiftDynamic&#32;<span>value&#32;shift</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        shift
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the '<<<' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  shift
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2706-2706" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="LessThanDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '536', 536)" onmouseover="showTip(event, '536', 536)">
+                <code><span>LessThanDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="536">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>LessThanDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations related to the '<' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L3021-3021" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="LessThanOrEqualDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '537', 537)" onmouseover="showTip(event, '537', 537)">
+                <code><span>LessThanOrEqualDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="537">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>LessThanOrEqualDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations related to the '<=' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L3059-3059" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="LogicalNotDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '538', 538)" onmouseover="showTip(event, '538', 538)">
+                <code><span>LogicalNotDynamic&#32;<span>value</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="538">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>LogicalNotDynamic&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations related to the '~~~' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2776-2776" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ModulusDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '539', 539)" onmouseover="showTip(event, '539', 539)">
+                <code><span>ModulusDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="539">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ModulusDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the '%' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2612-2612" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="MultiplyDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '540', 540)" onmouseover="showTip(event, '540', 540)">
+                <code><span>MultiplyDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="540">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>MultiplyDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the '*' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2578-2578" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ParseInt32">
+            <div>
+              <code onmouseout="hideTip(event, '541', 541)" onmouseover="showTip(event, '541', 541)">
+                <code><span>ParseInt32&#32;<span>s</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="541">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ParseInt32&#32;<span>s</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        s
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int32.html">int32</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Parse an int32 according to the rules used by the overloaded 'int32' conversion operator when applied to strings</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>s</span></dt><dd><p>The input string.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The parsed value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  s
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int32.html">int32</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2328-2328" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ParseInt64">
+            <div>
+              <code onmouseout="hideTip(event, '542', 542)" onmouseover="showTip(event, '542', 542)">
+                <code><span>ParseInt64&#32;<span>s</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="542">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ParseInt64&#32;<span>s</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        s
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64.html">int64</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Parse an int64 according to the rules used by the overloaded 'int64' conversion operator when applied to strings</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>s</span></dt><dd><p>The input string.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The parsed value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  s
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int64.html">int64</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2343-2343" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ParseUInt32">
+            <div>
+              <code onmouseout="hideTip(event, '543', 543)" onmouseover="showTip(event, '543', 543)">
+                <code><span>ParseUInt32&#32;<span>s</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="543">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ParseUInt32&#32;<span>s</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        s
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint32.html">uint32</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Parse an uint32 according to the rules used by the overloaded 'uint32' conversion operator when applied to strings</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>s</span></dt><dd><p>The input string.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The parsed value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  s
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint32.html">uint32</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2311-2311" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ParseUInt64">
+            <div>
+              <code onmouseout="hideTip(event, '544', 544)" onmouseover="showTip(event, '544', 544)">
+                <code><span>ParseUInt64&#32;<span>s</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="544">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>ParseUInt64&#32;<span>s</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        s
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint64.html">uint64</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Parse an uint64 according to the rules used by the overloaded 'uint64' conversion operator when applied to strings</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>s</span></dt><dd><p>The input string.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The parsed value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  s
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-string.html">string</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-uint64.html">uint64</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2358-2358" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="PhysicalEquality">
+            <div>
+              <code onmouseout="hideTip(event, '545', 545)" onmouseover="showTip(event, '545', 545)">
+                <code><span>PhysicalEquality&#32;<span>e1&#32;e2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="545">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>PhysicalEquality&#32;<span>e1&#32;e2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        e1
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        e2
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Reference/physical equality. 
+ True if the inputs are reference-equal, false otherwise.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>e1</span></dt><dd><p>The first value.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>e2</span></dt><dd><p>The second value.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the comparison.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  e1
+                </span>
+                :
+                <code>'T</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  e2
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L1998-1998" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="PhysicalHash">
+            <div>
+              <code onmouseout="hideTip(event, '546', 546)" onmouseover="showTip(event, '546', 546)">
+                <code><span>PhysicalHash&#32;<span>obj</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="546">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>PhysicalHash&#32;<span>obj</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        obj
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>The physical hash. Hashes on the object identity, except for value types,
+ where we hash on the contents.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>obj</span></dt><dd><p>The input object.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The hashed value.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  obj
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2000-2000" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="RightShiftDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '547', 547)" onmouseover="showTip(event, '547', 547)">
+                <code><span>RightShiftDynamic&#32;<span>value&#32;shift</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="547">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>RightShiftDynamic&#32;<span>value&#32;shift</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        shift
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the '>>>' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  shift
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2720-2720" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SByteWithMeasure">
+            <div>
+              <code onmouseout="hideTip(event, '548', 548)" onmouseover="showTip(event, '548', 548)">
+                <code><span>SByteWithMeasure&#32;<span>arg1</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="548">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>SByteWithMeasure&#32;<span>arg1</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte.html">sbyte</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte-1.html">sbyte</a>&lt;'Measure&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an sbyte value with units-of-measure</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>sbyte</span></dt><dd><p>The input sbyte.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The sbyte with units-of-measure.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte.html">sbyte</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-sbyte-1.html">sbyte</a>&lt;'Measure&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2257-2257" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SubtractionDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '549', 549)" onmouseover="showTip(event, '549', 549)">
+                <code><span>SubtractionDynamic&#32;<span>x&#32;y</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="549">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>SubtractionDynamic&#32;<span>x&#32;y</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        x
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        y
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the '-' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  x
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  y
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2561-2561" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="UnaryNegationDynamic">
+            <div>
+              <code onmouseout="hideTip(event, '550', 550)" onmouseover="showTip(event, '550', 550)">
+                <code><span>UnaryNegationDynamic&#32;<span>value</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="550">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>UnaryNegationDynamic&#32;<span>value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'U</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A compiler intrinsic that implements dynamic invocations to the unary '-' operator.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'U</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/prim-types.fs#L2629-2629" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/'</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

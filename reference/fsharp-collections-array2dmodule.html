@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Array2DFSharp.Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/License.txt">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<ul list-style-type="none">
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html">
+      Array
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html">
+      Array2D
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array3dmodule.html">
+      Array3D
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array4dmodule.html">
+      Array4D
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-comparisonidentity.html">
+      ComparisonIdentity
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-hashidentity.html">
+      HashIdentity
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html">
+      List
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html">
+      'T list
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-mapmodule.html">
+      Map
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html">
+      Map<'Key, 'Value>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-resizearray-1.html">
+      ResizeArray<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html">
+      Seq
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">
+      seq<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-setmodule.html">
+      Set
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html">
+      Set<'T>
+    </a>
+  </li>
+</ul>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    Array2D Module
+  </h1>
+  <p>
+    Namespace: FSharp.Collections
+  </p>
+  <p>
+    Assembly: FSharp.Core.dll
+  </p>
+  <div class="fsdocs-xmldoc">
+    <p class='fsdocs-summary'>Contains operations for working with 2-dimensional arrays.</p><p class='fsdocs-remarks'><p class='fsdocs-para'>See also <a href="https://docs.microsoft.com/dotnet/fsharp/language-reference/arrays">F# Language Guide - Arrays</a>.</p><p class='fsdocs-para'>F# and CLI multi-dimensional arrays are typically zero-based. 
+ However, CLI multi-dimensional arrays used in conjunction with external
+ libraries (e.g. libraries associated with Visual Basic) be 
+ non-zero based, using a potentially different base for each dimension.
+ The operations in this module will accept such arrays, and
+ the basing on an input array will be propagated to a matching output
+ array on the <code>Array2D.map</code> and <code>Array2D.mapi</code> operations.
+ Non-zero-based arrays can also be created using <code>Array2D.zeroCreateBased</code>, 
+ <code>Array2D.createBased</code> and <code>Array2D.initBased</code>.</p></p>
+  </div>
+  <div>
+    <h3>
+      Functions and values
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Function or value
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="base1">
+            <div>
+              <code onmouseout="hideTip(event, '119', 119)" onmouseover="showTip(event, '119', 119)">
+                <code><span>Array2D.base1&#32;<span>array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="119">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.base1&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Fetches the base-index for the first dimension of the array.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The base-index of the first dimension of the array.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L33-33" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="base2">
+            <div>
+              <code onmouseout="hideTip(event, '120', 120)" onmouseover="showTip(event, '120', 120)">
+                <code><span>Array2D.base2&#32;<span>array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="120">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.base2&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Fetches the base-index for the second dimension of the array.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The base-index of the second dimension of the array.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L36-36" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="blit">
+            <div>
+              <code onmouseout="hideTip(event, '121', 121)" onmouseover="showTip(event, '121', 121)">
+                <code><span>Array2D.blit&#32;<span>source&#32;sourceIndex1&#32;sourceIndex2&#32;target&#32;targetIndex1&#32;targetIndex2&#32;length1&#32;length2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="121">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.blit&#32;<span>source&#32;sourceIndex1&#32;sourceIndex2&#32;target&#32;targetIndex1&#32;targetIndex2&#32;length1&#32;length2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceIndex1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        sourceIndex2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        target
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        targetIndex1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        targetIndex2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Reads a range of elements from the first array and write them into the second.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>source</span></dt><dd><p>The source array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>sourceIndex1</span></dt><dd><p>The first-dimension index to begin copying from in the source array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>sourceIndex2</span></dt><dd><p>The second-dimension index to begin copying from in the source array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>target</span></dt><dd><p>The target array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>targetIndex1</span></dt><dd><p>The first-dimension index to begin copying into in the target array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>targetIndex2</span></dt><dd><p>The second-dimension index to begin copying into in the target array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length1</span></dt><dd><p>The number of elements to copy across the first dimension of the arrays.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length2</span></dt><dd><p>The number of elements to copy across the second dimension of the arrays.</p></dd></dl><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when any of the indices are negative or if either of
+ the counts are larger than the dimensions of the array allow.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  sourceIndex1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  sourceIndex2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  target
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  targetIndex1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  targetIndex2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L136-136" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="copy">
+            <div>
+              <code onmouseout="hideTip(event, '122', 122)" onmouseover="showTip(event, '122', 122)">
+                <code><span>Array2D.copy&#32;<span>array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="122">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.copy&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Builds a new array whose elements are the same as the input array.</p><p class='fsdocs-remarks'>For non-zero-based arrays the basing on an input array will be propagated to the output
+ array.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A copy of the input array.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'T[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L124-124" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="create">
+            <div>
+              <code onmouseout="hideTip(event, '123', 123)" onmouseover="showTip(event, '123', 123)">
+                <code><span>Array2D.create&#32;<span>length1&#32;length2&#32;value</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="123">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.create&#32;<span>length1&#32;length2&#32;value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an array whose elements are all initially the given value.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>length1</span></dt><dd><p>The length of the first dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length2</span></dt><dd><p>The length of the second dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>value</span></dt><dd><p>The value to populate the new array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The created array.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when length1 or length2 is negative.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'T[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L82-82" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="createBased">
+            <div>
+              <code onmouseout="hideTip(event, '124', 124)" onmouseover="showTip(event, '124', 124)">
+                <code><span>Array2D.createBased&#32;<span>base1&#32;base2&#32;length1&#32;length2&#32;initial</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="124">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.createBased&#32;<span>base1&#32;base2&#32;length1&#32;length2&#32;initial</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        base1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        base2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        initial
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates a based array whose elements are all initially the given value.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>base1</span></dt><dd><p>The base for the first dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>base2</span></dt><dd><p>The base for the second dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length1</span></dt><dd><p>The length of the first dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length2</span></dt><dd><p>The length of the second dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>initial</span></dt><dd><p>The value to populate the new array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The created array.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when base1, base2, length1, or length2 is negative.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  base1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  base2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  initial
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'T[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L65-65" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="get">
+            <div>
+              <code onmouseout="hideTip(event, '125', 125)" onmouseover="showTip(event, '125', 125)">
+                <code><span>Array2D.get&#32;<span>array&#32;index1&#32;index2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="125">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.get&#32;<span>array&#32;index1&#32;index2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Fetches an element from a 2D array. You can also use the syntax <code>array.[index1,index2]</code>.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>index1</span></dt><dd><p>The index along the first dimension.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>index2</span></dt><dd><p>The index along the second dimension.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The value of the array at the given index.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when the indices are negative or exceed the bounds of the array.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  index1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  index2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L39-39" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="init">
+            <div>
+              <code onmouseout="hideTip(event, '126', 126)" onmouseover="showTip(event, '126', 126)">
+                <code><span>Array2D.init&#32;<span>length1&#32;length2&#32;initializer</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="126">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.init&#32;<span>length1&#32;length2&#32;initializer</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        initializer
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an array given the dimensions and a generator function to compute the elements.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>length1</span></dt><dd><p>The length of the first dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length2</span></dt><dd><p>The length of the second dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>initializer</span></dt><dd><p>A function to produce elements of the array given the two indices.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The generated array.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when either of the lengths is negative.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  initializer
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'T[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L86-86" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="initBased">
+            <div>
+              <code onmouseout="hideTip(event, '127', 127)" onmouseover="showTip(event, '127', 127)">
+                <code><span>Array2D.initBased&#32;<span>base1&#32;base2&#32;length1&#32;length2&#32;initializer</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="127">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.initBased&#32;<span>base1&#32;base2&#32;length1&#32;length2&#32;initializer</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        base1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        base2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        initializer
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates a based array given the dimensions and a generator function to compute the elements.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>base1</span></dt><dd><p>The base for the first dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>base2</span></dt><dd><p>The base for the second dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length1</span></dt><dd><p>The length of the first dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length2</span></dt><dd><p>The length of the second dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>initializer</span></dt><dd><p>A function to produce elements of the array given the two indices.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The created array.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when base1, base2, length1, or length2 is negative.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  base1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  base2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  initializer
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'T[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L73-73" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="iter">
+            <div>
+              <code onmouseout="hideTip(event, '128', 128)" onmouseover="showTip(event, '128', 128)">
+                <code><span>Array2D.iter&#32;<span>action&#32;array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="128">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.iter&#32;<span>action&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        action
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Applies the given function to each element of the array.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>action</span></dt><dd><p>A function to apply to each element of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  action
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L90-90" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="iteri">
+            <div>
+              <code onmouseout="hideTip(event, '129', 129)" onmouseover="showTip(event, '129', 129)">
+                <code><span>Array2D.iteri&#32;<span>action&#32;array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="129">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.iteri&#32;<span>action&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        action
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Applies the given function to each element of the array.  The integer indices passed to the
+ function indicates the index of element.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>action</span></dt><dd><p>A function to apply to each element of the array with the indices available as an argument.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  action
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L101-101" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="length1">
+            <div>
+              <code onmouseout="hideTip(event, '130', 130)" onmouseover="showTip(event, '130', 130)">
+                <code><span>Array2D.length1&#32;<span>array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="130">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.length1&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Returns the length of an array in the first dimension.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The length of the array in the first dimension.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L27-27" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="length2">
+            <div>
+              <code onmouseout="hideTip(event, '131', 131)" onmouseover="showTip(event, '131', 131)">
+                <code><span>Array2D.length2&#32;<span>array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="131">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.length2&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Returns the length of an array in the second dimension.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The length of the array in the second dimension.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L30-30" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="map">
+            <div>
+              <code onmouseout="hideTip(event, '132', 132)" onmouseover="showTip(event, '132', 132)">
+                <code><span>Array2D.map&#32;<span>mapping&#32;array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="132">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.map&#32;<span>mapping&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'U</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'U[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Builds a new array whose elements are the results of applying the given function
+ to each of the elements of the array.</p><p class='fsdocs-remarks'>For non-zero-based arrays the basing on an input array will be propagated to the output
+ array.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>mapping</span></dt><dd><p>A function that is applied to transform each item of the input array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An array whose elements have been transformed by the given mapping.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'U</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'U[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L113-113" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="mapi">
+            <div>
+              <code onmouseout="hideTip(event, '133', 133)" onmouseover="showTip(event, '133', 133)">
+                <code><span>Array2D.mapi&#32;<span>mapping&#32;array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="133">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.mapi&#32;<span>mapping&#32;array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        mapping
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;'U</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'U[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Builds a new array whose elements are the results of applying the given function
+ to each of the elements of the array. The integer indices passed to the
+ function indicates the element being transformed.</p><p class='fsdocs-remarks'>For non-zero-based arrays the basing on an input array will be propagated to the output
+ array.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>mapping</span></dt><dd><p>A function that is applied to transform each element of the array.  The two integers
+ provide the index of the element.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An array whose elements have been transformed by the given mapping.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  mapping
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a>&#32;->&#32;'T&#32;->&#32;'U</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'U[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L118-118" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="rebase">
+            <div>
+              <code onmouseout="hideTip(event, '134', 134)" onmouseover="showTip(event, '134', 134)">
+                <code><span>Array2D.rebase&#32;<span>array</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="134">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.rebase&#32;<span>array</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Builds a new array whose elements are the same as the input array but
+ where a non-zero-based input array generates a corresponding zero-based 
+ output array.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The zero-based output array.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'T[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L129-129" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="set">
+            <div>
+              <code onmouseout="hideTip(event, '135', 135)" onmouseover="showTip(event, '135', 135)">
+                <code><span>Array2D.set&#32;<span>array&#32;index1&#32;index2&#32;value</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="135">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.set&#32;<span>array&#32;index1&#32;index2&#32;value</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        array
+                      </b>
+                      :
+                      <code><span>'T[,]</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Sets the value of an element in an array. You can also use the syntax <code>array.[index1,index2] <- value</code>.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>array</span></dt><dd><p>The input array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>index1</span></dt><dd><p>The index along the first dimension.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>index2</span></dt><dd><p>The index along the second dimension.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>value</span></dt><dd><p>The value to set in the array.</p></dd></dl><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when the indices are negative or exceed the bounds of the array.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  array
+                </span>
+                :
+                <code><span>'T[,]</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  index1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  index2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L43-43" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="zeroCreate">
+            <div>
+              <code onmouseout="hideTip(event, '136', 136)" onmouseover="showTip(event, '136', 136)">
+                <code><span>Array2D.zeroCreate&#32;<span>length1&#32;length2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="136">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.zeroCreate&#32;<span>length1&#32;length2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an array where the entries are initially Unchecked.defaultof<'T>.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>length1</span></dt><dd><p>The length of the first dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length2</span></dt><dd><p>The length of the second dimension of the array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The created array.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when length1 or length2 is negative.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'T[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L47-47" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="zeroCreateBased">
+            <div>
+              <code onmouseout="hideTip(event, '137', 137)" onmouseover="showTip(event, '137', 137)">
+                <code><span>Array2D.zeroCreateBased&#32;<span>base1&#32;base2&#32;length1&#32;length2</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="137">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Array2D.zeroCreateBased&#32;<span>base1&#32;base2&#32;length1&#32;length2</span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        base1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        base2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length1
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        length2
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span>'T[,]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates a based array where the entries are initially Unchecked.defaultof<'T>.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>base1</span></dt><dd><p>The base for the first dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>base2</span></dt><dd><p>The base for the second dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length1</span></dt><dd><p>The length of the first dimension of the array.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>length2</span></dt><dd><p>The length of the second dimension of the array.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The created array.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when base1, base2, length1, or length2 is negative.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  base1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  base2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length1
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  length2
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span>'T[,]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/array2.fs#L53-53" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/'</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AnonymousObject<'T1, 'T2, 'T3, 'T4, 'T5, 'T6>FSharp.Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/License.txt">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<ul list-style-type="none">
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers-grouping-2.html">
+      Grouping<'K, 'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers-leafexpressionconverter.html">
+      LeafExpressionConverter
+    </a>
+  </li>
+</ul>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    AnonymousObject<'T1, 'T2, 'T3, 'T4, 'T5, 'T6> Type
+  </h1>
+  <p>
+    Namespace: FSharp.Linq.RuntimeHelpers
+  </p>
+  <p>
+    Assembly: FSharp.Core.dll
+  </p>
+  <p>
+    Base Type: 
+    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+  </p>
+  <div class="fsdocs-xmldoc">
+    <p class='fsdocs-summary'>This type shouldn't be used directly from user code.</p>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Record fields
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Record Field
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="item1">
+            <div>
+              <code onmouseout="hideTip(event, '1590', 1590)" onmouseover="showTip(event, '1590', 1590)">
+                <code>item1</code>
+              </code>
+              <div class="fsdocs-tip" id="1590">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code>item1</code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L102-102" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="item2">
+            <div>
+              <code onmouseout="hideTip(event, '1591', 1591)" onmouseover="showTip(event, '1591', 1591)">
+                <code>item2</code>
+              </code>
+              <div class="fsdocs-tip" id="1591">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code>item2</code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L105-105" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="item3">
+            <div>
+              <code onmouseout="hideTip(event, '1592', 1592)" onmouseover="showTip(event, '1592', 1592)">
+                <code>item3</code>
+              </code>
+              <div class="fsdocs-tip" id="1592">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code>item3</code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L108-108" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="item4">
+            <div>
+              <code onmouseout="hideTip(event, '1593', 1593)" onmouseover="showTip(event, '1593', 1593)">
+                <code>item4</code>
+              </code>
+              <div class="fsdocs-tip" id="1593">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code>item4</code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L111-111" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="item5">
+            <div>
+              <code onmouseout="hideTip(event, '1594', 1594)" onmouseover="showTip(event, '1594', 1594)">
+                <code>item5</code>
+              </code>
+              <div class="fsdocs-tip" id="1594">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code>item5</code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L114-114" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="item6">
+            <div>
+              <code onmouseout="hideTip(event, '1595', 1595)" onmouseover="showTip(event, '1595', 1595)">
+                <code>item6</code>
+              </code>
+              <div class="fsdocs-tip" id="1595">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code>item6</code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L117-117" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+  <div>
+    <h3>
+      Constructors
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Constructor
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="( .ctor )">
+            <div>
+              <code onmouseout="hideTip(event, '1596', 1596)" onmouseover="showTip(event, '1596', 1596)">
+                <code><span>AnonymousObject<span><span>(<span>Item1,&#32;Item2,&#32;Item3,&#32;Item4,&#32;Item5,&#32;Item6</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1596">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>AnonymousObject<span><span>(<span>Item1,&#32;Item2,&#32;Item3,&#32;Item4,&#32;Item5,&#32;Item6</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        Item1
+                      </b>
+                      :
+                      <code>'T1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        Item2
+                      </b>
+                      :
+                      <code>'T2</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        Item3
+                      </b>
+                      :
+                      <code>'T3</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        Item4
+                      </b>
+                      :
+                      <code>'T4</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        Item5
+                      </b>
+                      :
+                      <code>'T5</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        Item6
+                      </b>
+                      :
+                      <code>'T6</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers-anonymousobject-6.html">AnonymousObject</a>&lt;<span>'T1,&#32;'T2,&#32;'T3,&#32;'T4,&#32;'T5,&#32;'T6</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  Item1
+                </span>
+                :
+                <code>'T1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  Item2
+                </span>
+                :
+                <code>'T2</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  Item3
+                </span>
+                :
+                <code>'T3</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  Item4
+                </span>
+                :
+                <code>'T4</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  Item5
+                </span>
+                :
+                <code>'T5</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  Item6
+                </span>
+                :
+                <code>'T6</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers-anonymousobject-6.html">AnonymousObject</a>&lt;<span>'T1,&#32;'T2,&#32;'T3,&#32;'T4,&#32;'T5,&#32;'T6</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L120-120" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Instance members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Instance member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="Item1">
+            <div>
+              <code onmouseout="hideTip(event, '1597', 1597)" onmouseover="showTip(event, '1597', 1597)">
+                <code><span>this.Item1</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1597">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Item1</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T1</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            Return Type: 
+            <code>'T1</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L103-103" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Item2">
+            <div>
+              <code onmouseout="hideTip(event, '1598', 1598)" onmouseover="showTip(event, '1598', 1598)">
+                <code><span>this.Item2</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1598">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Item2</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T2</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            Return Type: 
+            <code>'T2</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L106-106" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Item3">
+            <div>
+              <code onmouseout="hideTip(event, '1599', 1599)" onmouseover="showTip(event, '1599', 1599)">
+                <code><span>this.Item3</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1599">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Item3</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T3</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            Return Type: 
+            <code>'T3</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L109-109" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Item4">
+            <div>
+              <code onmouseout="hideTip(event, '1600', 1600)" onmouseover="showTip(event, '1600', 1600)">
+                <code><span>this.Item4</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1600">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Item4</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T4</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            Return Type: 
+            <code>'T4</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L112-112" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Item5">
+            <div>
+              <code onmouseout="hideTip(event, '1601', 1601)" onmouseover="showTip(event, '1601', 1601)">
+                <code><span>this.Item5</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1601">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Item5</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T5</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            Return Type: 
+            <code>'T5</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L115-115" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Item6">
+            <div>
+              <code onmouseout="hideTip(event, '1602', 1602)" onmouseover="showTip(event, '1602', 1602)">
+                <code><span>this.Item6</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1602">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Item6</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T6</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            Return Type: 
+            <code>'T6</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/MutableTuple.fs#L118-118" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/'</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

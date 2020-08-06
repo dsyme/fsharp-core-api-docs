@@ -1,0 +1,3598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>QueryBuilderFSharp.Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/License.txt">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<ul list-style-type="none">
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-nullablemodule.html">
+      Nullable
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-nullableoperators.html">
+      NullableOperators
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html">
+      QueryBuilder
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">
+      QuerySource<'T, 'Q>
+    </a>
+  </li>
+</ul>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    QueryBuilder Type
+  </h1>
+  <p>
+    Namespace: FSharp.Linq
+  </p>
+  <p>
+    Assembly: FSharp.Core.dll
+  </p>
+  <p>
+    Base Type: 
+    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+  </p>
+  <div class="fsdocs-xmldoc">
+    <p class='fsdocs-summary'>
+ The type used to support the F# query syntax. Use 'query { ... }' to use the query syntax.
+</p>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Constructors
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Constructor
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="( .ctor )">
+            <div>
+              <code onmouseout="hideTip(event, '1504', 1504)" onmouseover="showTip(event, '1504', 1504)">
+                <code><span>QueryBuilder<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1504">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>QueryBuilder<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html">QueryBuilder</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Create an instance of this builder. Use 'query { ... }' to use the query syntax.</p>
+            <br/>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html">QueryBuilder</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L52-52" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h3>
+      Instance members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Instance member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="All">
+            <div>
+              <code onmouseout="hideTip(event, '1505', 1505)" onmouseover="showTip(event, '1505', 1505)">
+                <code><span>this.All<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1505">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.All<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that determines whether all elements selected so far satisfies a condition.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L105-105" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="AverageBy">
+            <div>
+              <code onmouseout="hideTip(event, '1506', 1506)" onmouseover="showTip(event, '1506', 1506)">
+                <code><span>this.AverageBy<span><span>(<span>source,&#32;projection</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1506">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.AverageBy<span><span>(<span>source,&#32;projection</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        projection
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;^Value</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>^Value</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a value for each element selected so far and returns the average of these values. 
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  projection
+                </span>
+                :
+                <code><span>'T&#32;->&#32;^Value</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>^Value</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L186-186" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="AverageByNullable">
+            <div>
+              <code onmouseout="hideTip(event, '1507', 1507)" onmouseover="showTip(event, '1507', 1507)">
+                <code><span>this.AverageByNullable<span><span>(<span>source,&#32;projection</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1507">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.AverageByNullable<span><span>(<span>source,&#32;projection</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        projection
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^Value&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^Value&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a nullable value for each element selected so far and returns the average of these values. 
+ If any nullable does not have a value, it is ignored.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  projection
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^Value&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^Value&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L163-163" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Contains">
+            <div>
+              <code onmouseout="hideTip(event, '1508', 1508)" onmouseover="showTip(event, '1508', 1508)">
+                <code><span>this.Contains<span><span>(<span>source,&#32;key</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1508">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Contains<span><span>(<span>source,&#32;key</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        key
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that determines whether the selected elements contains a specified element.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  key
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L75-75" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Count">
+            <div>
+              <code onmouseout="hideTip(event, '1509', 1509)" onmouseover="showTip(event, '1509', 1509)">
+                <code><span>this.Count<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1509">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Count<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that returns the number of selected elements.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L96-96" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Distinct">
+            <div>
+              <code onmouseout="hideTip(event, '1510', 1510)" onmouseover="showTip(event, '1510', 1510)">
+                <code><span>this.Distinct<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1510">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Distinct<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects distinct elements from the elements selected so far. 
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L99-99" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ExactlyOne">
+            <div>
+              <code onmouseout="hideTip(event, '1511', 1511)" onmouseover="showTip(event, '1511', 1511)">
+                <code><span>this.ExactlyOne<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1511">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.ExactlyOne<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects the single, specific element selected so far
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L90-90" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ExactlyOneOrDefault">
+            <div>
+              <code onmouseout="hideTip(event, '1512', 1512)" onmouseover="showTip(event, '1512', 1512)">
+                <code><span>this.ExactlyOneOrDefault<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1512">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.ExactlyOneOrDefault<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects the single, specific element of those selected so far, or a default value if that element is not found.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L93-93" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Exists">
+            <div>
+              <code onmouseout="hideTip(event, '1513', 1513)" onmouseover="showTip(event, '1513', 1513)">
+                <code><span>this.Exists<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1513">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Exists<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that determines whether any element selected so far satisfies a condition.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L102-102" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Find">
+            <div>
+              <code onmouseout="hideTip(event, '1514', 1514)" onmouseover="showTip(event, '1514', 1514)">
+                <code><span>this.Find<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1514">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Find<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects the first element selected so far that satisfies a specified condition.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L126-126" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="For">
+            <div>
+              <code onmouseout="hideTip(event, '1515', 1515)" onmouseover="showTip(event, '1515', 1515)">
+                <code><span>this.For<span><span>(<span>source,&#32;body</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1515">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.For<span><span>(<span>source,&#32;body</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        body
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q2</span>&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ A method used to support the F# query syntax.  Projects each element of a sequence to another sequence and combines the resulting sequences into one sequence.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  body
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q2</span>&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L53-53" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GroupBy">
+            <div>
+              <code onmouseout="hideTip(event, '1516', 1516)" onmouseover="showTip(event, '1516', 1516)">
+                <code><span>this.GroupBy<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1516">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.GroupBy<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.linq.igrouping-2">IGrouping</a>&lt;<span>'Key,&#32;'T</span>&gt;</span>,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that groups the elements selected so far according to a specified key selector.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Key</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.linq.igrouping-2">IGrouping</a>&lt;<span>'Key,&#32;'T</span>&gt;</span>,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L213-213" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GroupJoin">
+            <div>
+              <code onmouseout="hideTip(event, '1517', 1517)" onmouseover="showTip(event, '1517', 1517)">
+                <code><span>this.GroupJoin<span><span>(<span>outerSource,&#32;innerSource,&#32;outerKeySelector,&#32;innerKeySelector,&#32;resultSelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1517">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.GroupJoin<span><span>(<span>outerSource,&#32;innerSource,&#32;outerKeySelector,&#32;innerKeySelector,&#32;resultSelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        outerSource
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Outer,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        innerSource
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Inner,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        outerKeySelector
+                      </b>
+                      :
+                      <code><span>'Outer&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        innerKeySelector
+                      </b>
+                      :
+                      <code><span>'Inner&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        resultSelector
+                      </b>
+                      :
+                      <code><span>'Outer&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;'Inner&gt;</span>&#32;->&#32;'Result</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that correlates two sets of selected values based on matching keys and groups the results. 
+ Normal usage is 'groupJoin y in elements2 on (key1 = key2) into group'. 
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  outerSource
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Outer,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  innerSource
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Inner,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  outerKeySelector
+                </span>
+                :
+                <code><span>'Outer&#32;->&#32;'Key</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  innerKeySelector
+                </span>
+                :
+                <code><span>'Inner&#32;->&#32;'Key</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  resultSelector
+                </span>
+                :
+                <code><span>'Outer&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;'Inner&gt;</span>&#32;->&#32;'Result</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L246-246" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GroupValBy">
+            <div>
+              <code onmouseout="hideTip(event, '1518', 1518)" onmouseover="showTip(event, '1518', 1518)">
+                <code><span>this.GroupValBy<span><span>(<span>source,&#32;resultSelector,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1518">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.GroupValBy<span><span>(<span>source,&#32;resultSelector,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        resultSelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Value</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.linq.igrouping-2">IGrouping</a>&lt;<span>'Key,&#32;'Value</span>&gt;</span>,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a value for each element selected so far and groups the elements by the given key.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  resultSelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Value</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Key</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span><span><a href="https://docs.microsoft.com/dotnet/api/system.linq.igrouping-2">IGrouping</a>&lt;<span>'Key,&#32;'Value</span>&gt;</span>,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L240-240" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Head">
+            <div>
+              <code onmouseout="hideTip(event, '1519', 1519)" onmouseover="showTip(event, '1519', 1519)">
+                <code><span>this.Head<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1519">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Head<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects the first element from those selected so far.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L108-108" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="HeadOrDefault">
+            <div>
+              <code onmouseout="hideTip(event, '1520', 1520)" onmouseover="showTip(event, '1520', 1520)">
+                <code><span>this.HeadOrDefault<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1520">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.HeadOrDefault<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects the first element of those selected so far, or a default value if the sequence contains no elements.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L129-129" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Join">
+            <div>
+              <code onmouseout="hideTip(event, '1521', 1521)" onmouseover="showTip(event, '1521', 1521)">
+                <code><span>this.Join<span><span>(<span>outerSource,&#32;innerSource,&#32;outerKeySelector,&#32;innerKeySelector,&#32;resultSelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1521">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Join<span><span>(<span>outerSource,&#32;innerSource,&#32;outerKeySelector,&#32;innerKeySelector,&#32;resultSelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        outerSource
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Outer,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        innerSource
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Inner,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        outerKeySelector
+                      </b>
+                      :
+                      <code><span>'Outer&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        innerKeySelector
+                      </b>
+                      :
+                      <code><span>'Inner&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        resultSelector
+                      </b>
+                      :
+                      <code><span>'Outer&#32;->&#32;'Inner&#32;->&#32;'Result</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that correlates two sets of selected values based on matching keys. 
+ Normal usage is 'join y in elements2 on (key1 = key2)'. 
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  outerSource
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Outer,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  innerSource
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Inner,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  outerKeySelector
+                </span>
+                :
+                <code><span>'Outer&#32;->&#32;'Key</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  innerKeySelector
+                </span>
+                :
+                <code><span>'Inner&#32;->&#32;'Key</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  resultSelector
+                </span>
+                :
+                <code><span>'Outer&#32;->&#32;'Inner&#32;->&#32;'Result</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L243-243" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Last">
+            <div>
+              <code onmouseout="hideTip(event, '1522', 1522)" onmouseover="showTip(event, '1522', 1522)">
+                <code><span>this.Last<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1522">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Last<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects the last element of those selected so far.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L84-84" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="LastOrDefault">
+            <div>
+              <code onmouseout="hideTip(event, '1523', 1523)" onmouseover="showTip(event, '1523', 1523)">
+                <code><span>this.LastOrDefault<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1523">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.LastOrDefault<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects the last element of those selected so far, or a default value if no element is found.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L87-87" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="LeftOuterJoin">
+            <div>
+              <code onmouseout="hideTip(event, '1524', 1524)" onmouseover="showTip(event, '1524', 1524)">
+                <code><span>this.LeftOuterJoin<span><span>(<span>outerSource,&#32;innerSource,&#32;outerKeySelector,&#32;innerKeySelector,&#32;resultSelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1524">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.LeftOuterJoin<span><span>(<span>outerSource,&#32;innerSource,&#32;outerKeySelector,&#32;innerKeySelector,&#32;resultSelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        outerSource
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Outer,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        innerSource
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Inner,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        outerKeySelector
+                      </b>
+                      :
+                      <code><span>'Outer&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        innerKeySelector
+                      </b>
+                      :
+                      <code><span>'Inner&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        resultSelector
+                      </b>
+                      :
+                      <code><span>'Outer&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;'Inner&gt;</span>&#32;->&#32;'Result</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that correlates two sets of selected values based on matching keys and groups the results.
+ If any group is empty, a group with a single default value is used instead. 
+ Normal usage is 'leftOuterJoin y in elements2 on (key1 = key2) into group'. 
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  outerSource
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Outer,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  innerSource
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Inner,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  outerKeySelector
+                </span>
+                :
+                <code><span>'Outer&#32;->&#32;'Key</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  innerKeySelector
+                </span>
+                :
+                <code><span>'Inner&#32;->&#32;'Key</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  resultSelector
+                </span>
+                :
+                <code><span>'Outer&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;'Inner&gt;</span>&#32;->&#32;'Result</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L249-249" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="MaxBy">
+            <div>
+              <code onmouseout="hideTip(event, '1525', 1525)" onmouseover="showTip(event, '1525', 1525)">
+                <code><span>this.MaxBy<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1525">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.MaxBy<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        valueSelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Value</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'Value</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a value for each element selected so far and returns the maximum resulting value. 
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  valueSelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Value</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'Value</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L135-135" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="MaxByNullable">
+            <div>
+              <code onmouseout="hideTip(event, '1526', 1526)" onmouseover="showTip(event, '1526', 1526)">
+                <code><span>this.MaxByNullable<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1526">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.MaxByNullable<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        valueSelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Value&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Value&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a nullable value for each element selected so far and returns the maximum of these values. 
+ If any nullable does not have a value, it is ignored.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  valueSelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Value&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Value&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L141-141" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="MinBy">
+            <div>
+              <code onmouseout="hideTip(event, '1527', 1527)" onmouseover="showTip(event, '1527', 1527)">
+                <code><span>this.MinBy<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1527">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.MinBy<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        valueSelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Value</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'Value</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a value for each element selected so far and returns the minimum resulting value. 
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  valueSelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Value</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'Value</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L132-132" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="MinByNullable">
+            <div>
+              <code onmouseout="hideTip(event, '1528', 1528)" onmouseover="showTip(event, '1528', 1528)">
+                <code><span>this.MinByNullable<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1528">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.MinByNullable<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        valueSelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Value&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Value&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a nullable value for each element selected so far and returns the minimum of these values. 
+ If any nullable does not have a value, it is ignored.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  valueSelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Value&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Value&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L138-138" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Nth">
+            <div>
+              <code onmouseout="hideTip(event, '1529', 1529)" onmouseover="showTip(event, '1529', 1529)">
+                <code><span>this.Nth<span><span>(<span>source,&#32;index</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1529">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Nth<span><span>(<span>source,&#32;index</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        index
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects the element at a specified index amongst those selected so far.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  index
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L111-111" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Quote">
+            <div>
+              <code onmouseout="hideTip(event, '1530', 1530)" onmouseover="showTip(event, '1530', 1530)">
+                <code><span>this.Quote<span><span>(<span>arg1</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1530">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Quote<span><span>(<span>arg1</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr-1.html">Expr</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr-1.html">Expr</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ A method used to support the F# query syntax.  Indicates that the query should be passed as a quotation to the Run method.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr-1.html">Expr</a>&lt;'T&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr-1.html">Expr</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L66-66" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Run">
+            <div>
+              <code onmouseout="hideTip(event, '1531', 1531)" onmouseover="showTip(event, '1531', 1531)">
+                <code><span>this.Run<span><span>(<span>arg1</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1531">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Run<span><span>(<span>arg1</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg0
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr-1.html">Expr</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;<a href="https://docs.microsoft.com/dotnet/api/system.linq.iqueryable">IQueryable</a></span>&gt;</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ A method used to support the F# query syntax.  Runs the given quotation as a query using LINQ IQueryable rules.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg0
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr-1.html">Expr</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;<a href="https://docs.microsoft.com/dotnet/api/system.linq.iqueryable">IQueryable</a></span>&gt;</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L263-263" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Select">
+            <div>
+              <code onmouseout="hideTip(event, '1532', 1532)" onmouseover="showTip(event, '1532', 1532)">
+                <code><span>this.Select<span><span>(<span>source,&#32;projection</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1532">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Select<span><span>(<span>source,&#32;projection</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        projection
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Result</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that projects each of the elements selected so far.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  projection
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Result</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'Result,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L78-78" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Skip">
+            <div>
+              <code onmouseout="hideTip(event, '1533', 1533)" onmouseover="showTip(event, '1533', 1533)">
+                <code><span>this.Skip<span><span>(<span>source,&#32;count</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1533">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Skip<span><span>(<span>source,&#32;count</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        count
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that bypasses a specified number of the elements selected so far and selects the remaining elements.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  count
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L114-114" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SkipWhile">
+            <div>
+              <code onmouseout="hideTip(event, '1534', 1534)" onmouseover="showTip(event, '1534', 1534)">
+                <code><span>this.SkipWhile<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1534">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.SkipWhile<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that bypasses elements in a sequence as long as a specified condition is true and then selects the remaining elements.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L117-117" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SortBy">
+            <div>
+              <code onmouseout="hideTip(event, '1535', 1535)" onmouseover="showTip(event, '1535', 1535)">
+                <code><span>this.SortBy<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1535">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.SortBy<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that sorts the elements selected so far in ascending order by the given sorting key.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Key</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L216-216" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SortByDescending">
+            <div>
+              <code onmouseout="hideTip(event, '1536', 1536)" onmouseover="showTip(event, '1536', 1536)">
+                <code><span>this.SortByDescending<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1536">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.SortByDescending<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that sorts the elements selected so far in descending order by the given sorting key.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Key</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L219-219" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SortByNullable">
+            <div>
+              <code onmouseout="hideTip(event, '1537', 1537)" onmouseover="showTip(event, '1537', 1537)">
+                <code><span>this.SortByNullable<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1537">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.SortByNullable<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Key&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that sorts the elements selected so far in ascending order by the given nullable sorting key.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Key&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L228-228" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SortByNullableDescending">
+            <div>
+              <code onmouseout="hideTip(event, '1538', 1538)" onmouseover="showTip(event, '1538', 1538)">
+                <code><span>this.SortByNullableDescending<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1538">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.SortByNullableDescending<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Key&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that sorts the elements selected so far in descending order by the given nullable sorting key.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Key&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L231-231" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Source">
+            <div>
+              <code onmouseout="hideTip(event, '1539', 1539)" onmouseover="showTip(event, '1539', 1539)">
+                <code><span>this.Source<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1539">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Source<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;<a href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ A method used to support the F# query syntax.  Inputs to queries are implicitly wrapped by a call to one of the overloads of this method.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;'T&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;<a href="https://docs.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L72-72" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Source">
+            <div>
+              <code onmouseout="hideTip(event, '1540', 1540)" onmouseover="showTip(event, '1540', 1540)">
+                <code><span>this.Source<span><span>(<span>source</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1540">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Source<span><span>(<span>source</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ A method used to support the F# query syntax.  Inputs to queries are implicitly wrapped by a call to one of the overloads of this method.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.linq.iqueryable-1">IQueryable</a>&lt;'T&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L69-69" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SumBy">
+            <div>
+              <code onmouseout="hideTip(event, '1541', 1541)" onmouseover="showTip(event, '1541', 1541)">
+                <code><span>this.SumBy<span><span>(<span>source,&#32;projection</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1541">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.SumBy<span><span>(<span>source,&#32;projection</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        projection
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;^Value</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>^Value</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a value for each element selected so far and returns the sum of these values. 
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  projection
+                </span>
+                :
+                <code><span>'T&#32;->&#32;^Value</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>^Value</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L205-205" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SumByNullable">
+            <div>
+              <code onmouseout="hideTip(event, '1542', 1542)" onmouseover="showTip(event, '1542', 1542)">
+                <code><span>this.SumByNullable<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1542">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.SumByNullable<span><span>(<span>source,&#32;valueSelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        valueSelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^Value&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^Value&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a nullable value for each element selected so far and returns the sum of these values. 
+ If any nullable does not have a value, it is ignored.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  valueSelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^Value&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;^Value&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L144-144" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Take">
+            <div>
+              <code onmouseout="hideTip(event, '1543', 1543)" onmouseover="showTip(event, '1543', 1543)">
+                <code><span>this.Take<span><span>(<span>source,&#32;count</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1543">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Take<span><span>(<span>source,&#32;count</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        count
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects a specified number of contiguous elements from those selected so far.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  count
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L120-120" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="TakeWhile">
+            <div>
+              <code onmouseout="hideTip(event, '1544', 1544)" onmouseover="showTip(event, '1544', 1544)">
+                <code><span>this.TakeWhile<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1544">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.TakeWhile<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects elements from a sequence as long as a specified condition is true, and then skips the remaining elements.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L123-123" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ThenBy">
+            <div>
+              <code onmouseout="hideTip(event, '1545', 1545)" onmouseover="showTip(event, '1545', 1545)">
+                <code><span>this.ThenBy<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1545">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.ThenBy<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that performs a subsequent ordering of the elements selected so far in ascending order by the given sorting key.
+ This operator may only be used immediately after a 'sortBy', 'sortByDescending', 'thenBy' or 'thenByDescending', or their nullable variants.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Key</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L222-222" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ThenByDescending">
+            <div>
+              <code onmouseout="hideTip(event, '1546', 1546)" onmouseover="showTip(event, '1546', 1546)">
+                <code><span>this.ThenByDescending<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1546">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.ThenByDescending<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;'Key</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that performs a subsequent ordering of the elements selected so far in descending order by the given sorting key.
+ This operator may only be used immediately after a 'sortBy', 'sortByDescending', 'thenBy' or 'thenByDescending', or their nullable variants.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;'Key</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L225-225" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ThenByNullable">
+            <div>
+              <code onmouseout="hideTip(event, '1547', 1547)" onmouseover="showTip(event, '1547', 1547)">
+                <code><span>this.ThenByNullable<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1547">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.ThenByNullable<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Key&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that performs a subsequent ordering of the elements selected so far in ascending order by the given nullable sorting key.
+ This operator may only be used immediately after a 'sortBy', 'sortByDescending', 'thenBy' or 'thenByDescending', or their nullable variants.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Key&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L234-234" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="ThenByNullableDescending">
+            <div>
+              <code onmouseout="hideTip(event, '1548', 1548)" onmouseover="showTip(event, '1548', 1548)">
+                <code><span>this.ThenByNullableDescending<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1548">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.ThenByNullableDescending<span><span>(<span>source,&#32;keySelector</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        keySelector
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Key&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that performs a subsequent ordering of the elements selected so far in descending order by the given nullable sorting key.
+ This operator may only be used immediately after a 'sortBy', 'sortByDescending', 'thenBy' or 'thenByDescending', or their nullable variants.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  keySelector
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<span><a href="https://docs.microsoft.com/dotnet/api/system.nullable-1">Nullable</a>&lt;'Key&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L237-237" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Where">
+            <div>
+              <code onmouseout="hideTip(event, '1549', 1549)" onmouseover="showTip(event, '1549', 1549)">
+                <code><span>this.Where<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1549">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Where<span><span>(<span>source,&#32;predicate</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        source
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        predicate
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>A query operator that selects those elements based on a specified predicate. 
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  source
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  predicate
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L81-81" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Yield">
+            <div>
+              <code onmouseout="hideTip(event, '1550', 1550)" onmouseover="showTip(event, '1550', 1550)">
+                <code><span>this.Yield<span><span>(<span>value</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1550">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Yield<span><span>(<span>value</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        value
+                      </b>
+                      :
+                      <code>'T</code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ A method used to support the F# query syntax.  Returns a sequence of length one that contains the specified value.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  value
+                </span>
+                :
+                <code>'T</code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L59-59" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="YieldFrom">
+            <div>
+              <code onmouseout="hideTip(event, '1551', 1551)" onmouseover="showTip(event, '1551', 1551)">
+                <code><span>this.YieldFrom<span><span>(<span>computation</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1551">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.YieldFrom<span><span>(<span>computation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ A method used to support the F# query syntax.  Returns a sequence that contains the specified values.
+ </p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L62-62" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Zero">
+            <div>
+              <code onmouseout="hideTip(event, '1552', 1552)" onmouseover="showTip(event, '1552', 1552)">
+                <code><span>this.Zero<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1552">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>this.Zero<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ A method used to support the F# query syntax.  Returns an empty sequence that has the specified type argument.
+ </p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querysource-2.html">QuerySource</a>&lt;<span>'T,&#32;'Q</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/Query.fs#L56-56" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div></div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/'</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

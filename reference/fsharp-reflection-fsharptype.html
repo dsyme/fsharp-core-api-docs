@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FSharpTypeFSharp.Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/License.txt">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>             
+<ul list-style-type="none">
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpreflectionextensions.html">
+      FSharpReflectionExtensions
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharptype.html">
+      FSharpType
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-fsharpvalue.html">
+      FSharpValue
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">
+      UnionCaseInfo
+    </a>
+  </li>
+</ul>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    FSharpType Type
+  </h1>
+  <p>
+    Namespace: FSharp.Reflection
+  </p>
+  <p>
+    Assembly: FSharp.Core.dll
+  </p>
+  <p>
+    Base Type: 
+    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+  </p>
+  <div class="fsdocs-xmldoc">
+    <p class='fsdocs-summary'>Contains operations associated with constructing and analyzing F# types such as records, unions and tuples</p>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Static members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Static member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="GetExceptionFields">
+            <div>
+              <code onmouseout="hideTip(event, '1701', 1701)" onmouseover="showTip(event, '1701', 1701)">
+                <code><span>FSharpType.GetExceptionFields<span><span>(<span>exceptionType,&#32;?bindingFlags</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1701">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.GetExceptionFields<span><span>(<span>exceptionType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        exceptionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>[]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Reads all the fields from an F# exception declaration, in declaration order</p><p class='fsdocs-remarks'>Assumes <code>exceptionType</code> is an exception representation type. If not, ArgumentException is raised.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>exceptionType</span></dt><dd><p>The exception type to read.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An array containing the PropertyInfo of each field in the exception.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown if the given type is not an exception.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  exceptionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?bindingFlags
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>[]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L893-893" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GetFunctionElements">
+            <div>
+              <code onmouseout="hideTip(event, '1702', 1702)" onmouseover="showTip(event, '1702', 1702)">
+                <code><span>FSharpType.GetFunctionElements<span><span>(<span>functionType</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1702">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.GetFunctionElements<span><span>(<span>functionType</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        functionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Gets the domain and range types from an F# function type  or from the runtime type of a closure implementing an F# type</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>functionType</span></dt><dd><p>The input function type.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A tuple of the domain and range types of the input function.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  functionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L871-871" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GetRecordFields">
+            <div>
+              <code onmouseout="hideTip(event, '1703', 1703)" onmouseover="showTip(event, '1703', 1703)">
+                <code><span>FSharpType.GetRecordFields<span><span>(<span>recordType,&#32;?bindingFlags</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1703">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.GetRecordFields<span><span>(<span>recordType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        recordType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>[]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Reads all the fields from a record value, in declaration order</p><p class='fsdocs-remarks'>Assumes the given input is a record value. If not, ArgumentException is raised.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>recordType</span></dt><dd><p>The input record type.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An array of descriptions of the properties of the record type.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  recordType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?bindingFlags
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.reflection.propertyinfo">PropertyInfo</a>[]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L876-876" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GetTupleElements">
+            <div>
+              <code onmouseout="hideTip(event, '1704', 1704)" onmouseover="showTip(event, '1704', 1704)">
+                <code><span>FSharpType.GetTupleElements<span><span>(<span>tupleType</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1704">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.GetTupleElements<span><span>(<span>tupleType</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        tupleType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Gets the tuple elements from the representation of an F# tuple type.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>tupleType</span></dt><dd><p>The input tuple type.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An array of the types contained in the given tuple type.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  tupleType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L867-867" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="GetUnionCases">
+            <div>
+              <code onmouseout="hideTip(event, '1705', 1705)" onmouseover="showTip(event, '1705', 1705)">
+                <code><span>FSharpType.GetUnionCases<span><span>(<span>unionType,&#32;?bindingFlags</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1705">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.GetUnionCases<span><span>(<span>unionType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        unionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a>[]</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Gets the cases of a union type.</p><p class='fsdocs-remarks'>Assumes the given type is a union type. If not, ArgumentException is raised during pre-computation.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>unionType</span></dt><dd><p>The input union type.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An array of descriptions of the cases of the given union type.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td><td>Thrown when the input type is not a union type.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  unionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?bindingFlags
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection-unioncaseinfo.html">UnionCaseInfo</a>[]</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L881-881" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="IsExceptionRepresentation">
+            <div>
+              <code onmouseout="hideTip(event, '1706', 1706)" onmouseover="showTip(event, '1706', 1706)">
+                <code><span>FSharpType.IsExceptionRepresentation<span><span>(<span>exceptionType,&#32;?bindingFlags</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1706">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.IsExceptionRepresentation<span><span>(<span>exceptionType,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        exceptionType
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Returns true if the <code>typ</code> is a representation of an F# exception declaration</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>exceptionType</span></dt><dd><p>The type to check.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='fsdocs-returns'><p>Returns: True if the type check is an F# exception.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  exceptionType
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?bindingFlags
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L888-888" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="IsFunction">
+            <div>
+              <code onmouseout="hideTip(event, '1707', 1707)" onmouseover="showTip(event, '1707', 1707)">
+                <code><span>FSharpType.IsFunction<span><span>(<span>typ</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1707">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.IsFunction<span><span>(<span>typ</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        typ
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Return true if the <code>typ</code> is a representation of an F# function type or the runtime type of a closure implementing an F# function type</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>typ</span></dt><dd><p>The type to check.</p></dd></dl><p class='fsdocs-returns'><p>Returns: True if the type check succeeds.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  typ
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L832-832" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="IsModule">
+            <div>
+              <code onmouseout="hideTip(event, '1708', 1708)" onmouseover="showTip(event, '1708', 1708)">
+                <code><span>FSharpType.IsModule<span><span>(<span>typ</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1708">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.IsModule<span><span>(<span>typ</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        typ
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Return true if the <code>typ</code> is a <a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> value corresponding to the compiled form of an F# module </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>typ</span></dt><dd><p>The type to check.</p></dd></dl><p class='fsdocs-returns'><p>Returns: True if the type check succeeds.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  typ
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L837-837" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="IsRecord">
+            <div>
+              <code onmouseout="hideTip(event, '1709', 1709)" onmouseover="showTip(event, '1709', 1709)">
+                <code><span>FSharpType.IsRecord<span><span>(<span>typ,&#32;?bindingFlags</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1709">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.IsRecord<span><span>(<span>typ,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        typ
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Return true if the <code>typ</code> is a representation of an F# record type </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>typ</span></dt><dd><p>The type to check.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='fsdocs-returns'><p>Returns: True if the type check succeeds.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  typ
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?bindingFlags
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L821-821" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="IsTuple">
+            <div>
+              <code onmouseout="hideTip(event, '1710', 1710)" onmouseover="showTip(event, '1710', 1710)">
+                <code><span>FSharpType.IsTuple<span><span>(<span>typ</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1710">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.IsTuple<span><span>(<span>typ</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        typ
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Return true if the <code>typ</code> is a representation of an F# tuple type </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>typ</span></dt><dd><p>The type to check.</p></dd></dl><p class='fsdocs-returns'><p>Returns: True if the type check succeeds.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  typ
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L817-817" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="IsUnion">
+            <div>
+              <code onmouseout="hideTip(event, '1711', 1711)" onmouseover="showTip(event, '1711', 1711)">
+                <code><span>FSharpType.IsUnion<span><span>(<span>typ,&#32;?bindingFlags</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1711">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.IsUnion<span><span>(<span>typ,&#32;?bindingFlags</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        typ
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?bindingFlags
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Returns true if the <code>typ</code> is a representation of an F# union type or the runtime type of a value of that type</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>typ</span></dt><dd><p>The type to check.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>bindingFlags</span></dt><dd><p>Optional binding flags.</p></dd></dl><p class='fsdocs-returns'><p>Returns: True if the type check succeeds.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  typ
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?bindingFlags
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.bindingflags">BindingFlags</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L826-826" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="MakeFunctionType">
+            <div>
+              <code onmouseout="hideTip(event, '1712', 1712)" onmouseover="showTip(event, '1712', 1712)">
+                <code><span>FSharpType.MakeFunctionType<span><span>(<span>domain,&#32;range</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1712">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.MakeFunctionType<span><span>(<span>domain,&#32;range</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        domain
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        range
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Returns a <a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> representing the F# function type with the given domain and range</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>domain</span></dt><dd><p>The input type of the function.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>range</span></dt><dd><p>The output type of the function.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The function type with the given domain and range.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  domain
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  range
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L841-841" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="MakeStructTupleType">
+            <div>
+              <code onmouseout="hideTip(event, '1713', 1713)" onmouseover="showTip(event, '1713', 1713)">
+                <code><span>FSharpType.MakeStructTupleType<span><span>(<span>asm,&#32;types</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1713">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.MakeStructTupleType<span><span>(<span>asm,&#32;types</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        asm
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        types
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Returns a <a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> representing an F# struct tuple type with the given element types</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>asm</span></dt><dd><p>Runtime assembly containing System.ValueTuple definitions.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>types</span></dt><dd><p>An array of types for the tuple elements.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The type representing the struct tuple containing the input elements.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  asm
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  types
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L861-861" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="MakeTupleType">
+            <div>
+              <code onmouseout="hideTip(event, '1714', 1714)" onmouseover="showTip(event, '1714', 1714)">
+                <code><span>FSharpType.MakeTupleType<span><span>(<span>asm,&#32;types</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1714">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.MakeTupleType<span><span>(<span>asm,&#32;types</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        asm
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        types
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Returns a <a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> representing an F# tuple type with the given element types</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>asm</span></dt><dd><p>Runtime assembly containing System.Tuple definitions.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>types</span></dt><dd><p>An array of types for the tuple elements.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The type representing the tuple containing the input elements.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  asm
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.reflection.assembly">Assembly</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  types
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L855-855" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="MakeTupleType">
+            <div>
+              <code onmouseout="hideTip(event, '1715', 1715)" onmouseover="showTip(event, '1715', 1715)">
+                <code><span>FSharpType.MakeTupleType<span><span>(<span>types</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1715">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>FSharpType.MakeTupleType<span><span>(<span>types</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        types
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Returns a <a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a> representing an F# tuple type with the given element types</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>types</span></dt><dd><p>An array of types for the tuple elements.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The type representing the tuple containing the input elements.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  types
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a>[]</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><a href="https://docs.microsoft.com/dotnet/api/system.type">Type</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/reflect.fs#L846-846" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/'</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+

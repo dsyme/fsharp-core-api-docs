@@ -1,0 +1,2720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>AsyncFSharp.Core</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="F# Software Foundation; Microsoft; F# Contributors">
+
+    <link rel="stylesheet" id="theme_link" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.3.1/materia/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/navbar-fixed-left.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-default.css" />
+    <link type="text/css" rel="stylesheet" href="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-custom.css" />
+    <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+    <!-- END SEARCH BOX: this adds support for the search box -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-light bg-secondary fixed-left" id="fsdocs-menu">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a href="https://fsharp.org"><img id="fsdocs-logo" src="https://fsharp.github.io/fsharp-core-docs/img/logo.png" /></a>
+            <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+            <div id="header">
+                <div class="searchbox" id="fsdocs-searchbox">
+                    <label for="search-by">
+                        <i class="fas fa-search"></i>
+                    </label>
+                    <input data-search-input="" id="search-by" type="search" placeholder="Search..." />
+                    <span data-search-clear="">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+            </div>
+
+            <!-- END SEARCH BOX: this adds support for the search box -->
+            <ul class="navbar-nav">
+                <li class="nav-header">Links</li>
+                <li class="nav-item" id="fsdocs-license-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/License.txt">License (Apache 2.0)</a></li>
+                <li class="nav-item" id="fsdocs-release-notes-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/blob/master/release-notes.md">Release Notes</a></li>
+                <li class="nav-item" id="fsdocs-repository-link"><a class="nav-link" href="https://github.com/dotnet/fsharp/">Source Repository</a></li>
+                
+                <li class="nav-header">
+  Namespaces
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections.html">
+      FSharp.Collections
+    </a>
+  </span>
+</li>             
+<li class="nav-item active">
+  <span>
+    <a class="nav-link active" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control.html">
+      FSharp.Control
+    </a>
+  </span>
+</li>             
+<ul list-style-type="none">
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html">
+      Async
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">
+      Async<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-asyncactivation-1.html">
+      AsyncActivation<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncbuilder.html">
+      AsyncBuilder
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-asyncprimitives.html">
+      AsyncPrimitives
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasyncreplychannel-1.html">
+      AsyncReplyChannel<'Reply>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-asyncreturn.html">
+      AsyncReturn
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html">
+      CommonExtensions
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpdelegateevent-1.html">
+      DelegateEvent<'Delegate>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-eventmodule.html">
+      Event
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpevent-1.html">
+      Event<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpevent-2.html">
+      Event<'Delegate, 'Args>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharphandler-1.html">
+      Handler<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-idelegateevent-1.html">
+      IDelegateEvent<'Delegate>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html">
+      IEvent<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">
+      IEvent<'Delegate, 'Args>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-lazy-1.html">
+      Lazy<'T>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-lazyextensions.html">
+      LazyExtensions
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpmailboxprocessor-1.html">
+      MailboxProcessor<'Msg>
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-observablemodule.html">
+      Observable
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html">
+      WebExtensions
+    </a>
+  </li>
+</ul>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core.html">
+      FSharp.Core
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices.html">
+      FSharp.Core.CompilerServices
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq.html">
+      FSharp.Linq
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-runtimehelpers.html">
+      FSharp.Linq.RuntimeHelpers
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop.html">
+      FSharp.NativeInterop
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations.html">
+      FSharp.Quotations
+    </a>
+  </span>
+</li>             
+<li class="nav-item">
+  <span>
+    <a class="nav-link" href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-reflection.html">
+      FSharp.Reflection
+    </a>
+  </span>
+</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="masthead">
+            <h3 class="muted"><a href="https://fsharp.github.io/fsharp-core-docs/">FSharp.Core</a></h3>
+        </div>
+        <hr />
+        <div class="container" id="fsdocs-content">
+            <div>
+  <h1>
+    Async Type
+  </h1>
+  <p>
+    Namespace: FSharp.Control
+  </p>
+  <p>
+    Assembly: FSharp.Core.dll
+  </p>
+  <p>
+    Base Type: 
+    <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></code>
+  </p>
+  <div class="fsdocs-xmldoc">
+    <p class='fsdocs-summary'>Holds static members for creating and manipulating asynchronous computations.</p><p class='fsdocs-remarks'>
+  See also <a href="https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/asynchronous-workflows">F# Language Guide - Async Workflows</a>.
+ </p>
+  </div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div>
+    <h3>
+      Static members
+    </h3>
+    <table class="table outer-list fsdocs-member-list">
+      <thead>
+        <tr>
+          <td class="fsdocs-member-list-header">
+            Static member
+          </td>
+          <td class="fsdocs-member-list-header">
+            Description
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fsdocs-member-name" id="AsBeginEnd">
+            <div>
+              <code onmouseout="hideTip(event, '1155', 1155)" onmouseover="showTip(event, '1155', 1155)">
+                <code><span>Async.AsBeginEnd<span><span>(<span>computation</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1155">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.AsBeginEnd<span><span>(<span>computation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span>'Arg&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><span>(<span><span>'Arg&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span>)</span>&#32;*&#32;<span>(<span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span>)</span>&#32;*&#32;<span>(<span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span>)</span></span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates three functions that can be used to implement the .NET 1.0 Asynchronous 
+ Programming Model (APM) for a given asynchronous computation.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>A function generating the asynchronous computation to split into the traditional
+ .NET Asynchronous Programming Model.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A tuple of the begin, end, and cancel members.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span>'Arg&#32;->&#32;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><span>(<span><span>'Arg&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span>)</span>&#32;*&#32;<span>(<span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span>)</span>&#32;*&#32;<span>(<span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span>)</span></span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1587-1587" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="AwaitEvent">
+            <div>
+              <code onmouseout="hideTip(event, '1156', 1156)" onmouseover="showTip(event, '1156', 1156)">
+                <code><span>Async.AwaitEvent<span><span>(<span>event,&#32;?cancelAction</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1156">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.AwaitEvent<span><span>(<span>event,&#32;?cancelAction</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        event
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancelAction
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that waits for a single invocation of a CLI 
+ event by adding a handler to the event. Once the computation completes or is 
+ cancelled, the handler is removed from the event.</p><p class='fsdocs-remarks'>The computation will respond to cancellation while waiting for the event. If a 
+ cancellation occurs, and <code>cancelAction</code> is specified, then it is executed, and 
+ the computation continues to wait for the event.
+ 
+ If <code>cancelAction</code> is not specified, then cancellation causes the computation
+ to cancel immediately.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>event</span></dt><dd><p>The event to handle once.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancelAction</span></dt><dd><p>An optional function to execute instead of cancelling when a
+ cancellation is issued.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation that waits for the event to be invoked.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  event
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-2.html">IEvent</a>&lt;<span>'Del,&#32;'T</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancelAction
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1597-1597" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="AwaitIAsyncResult">
+            <div>
+              <code onmouseout="hideTip(event, '1157', 1157)" onmouseover="showTip(event, '1157', 1157)">
+                <code><span>Async.AwaitIAsyncResult<span><span>(<span>iar,&#32;?millisecondsTimeout</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1157">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.AwaitIAsyncResult<span><span>(<span>iar,&#32;?millisecondsTimeout</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        iar
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?millisecondsTimeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that will wait on the IAsyncResult.</p><p class='fsdocs-remarks'>The computation returns true if the handle indicated a result within the given timeout.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>iar</span></dt><dd><p>The IAsyncResult to wait on.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>millisecondsTimeout</span></dt><dd><p>The timeout value in milliseconds.  If one is not provided
+ then the default value of -1 corresponding to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout">Timeout.Infinite</a>.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation that waits on the given <code>IAsyncResult</code>.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  iar
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?millisecondsTimeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1462-1462" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="AwaitTask">
+            <div>
+              <code onmouseout="hideTip(event, '1158', 1158)" onmouseover="showTip(event, '1158', 1158)">
+                <code><span>Async.AwaitTask<span><span>(<span>task</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1158">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.AwaitTask<span><span>(<span>task</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        task
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ Return an asynchronous computation that will wait for the given task to complete and return
+ its result.
+</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  task
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1697-1697" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="AwaitTask">
+            <div>
+              <code onmouseout="hideTip(event, '1159', 1159)" onmouseover="showTip(event, '1159', 1159)">
+                <code><span>Async.AwaitTask<span><span>(<span>task</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1159">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.AwaitTask<span><span>(<span>task</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        task
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ Return an asynchronous computation that will wait for the given task to complete and return
+ its result.
+</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  task
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1694-1694" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="AwaitWaitHandle">
+            <div>
+              <code onmouseout="hideTip(event, '1160', 1160)" onmouseover="showTip(event, '1160', 1160)">
+                <code><span>Async.AwaitWaitHandle<span><span>(<span>waitHandle,&#32;?millisecondsTimeout</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1160">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.AwaitWaitHandle<span><span>(<span>waitHandle,&#32;?millisecondsTimeout</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        waitHandle
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.waithandle">WaitHandle</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?millisecondsTimeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that will wait on the given WaitHandle.</p><p class='fsdocs-remarks'>The computation returns true if the handle indicated a result within the given timeout.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>waitHandle</span></dt><dd><p>The <code>WaitHandle</code> that can be signalled.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>millisecondsTimeout</span></dt><dd><p>The timeout value in milliseconds.  If one is not provided
+ then the default value of -1 corresponding to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout">Timeout.Infinite</a>.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation that waits on the given <code>WaitHandle</code>.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  waitHandle
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.waithandle">WaitHandle</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?millisecondsTimeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bool.html">bool</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1415-1415" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="CancelDefaultToken">
+            <div>
+              <code onmouseout="hideTip(event, '1161', 1161)" onmouseover="showTip(event, '1161', 1161)">
+                <code><span>Async.CancelDefaultToken<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1161">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.CancelDefaultToken<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Raises the cancellation condition for the most recent set of asynchronous computations started 
+ without any specific CancellationToken. Replaces the global CancellationTokenSource with a new 
+ global token source for any asynchronous computations created after this point without any 
+ specific CancellationToken.</p>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1118-1118" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="CancellationToken">
+            <div>
+              <code onmouseout="hideTip(event, '1162', 1162)" onmouseover="showTip(event, '1162', 1162)">
+                <code><span>Async.CancellationToken</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1162">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.CancellationToken</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that returns the CancellationToken governing the execution 
+ of the computation.</p><p class='fsdocs-remarks'>In <code>async { let! token = Async.CancellationToken ...}</code> token can be used to initiate other 
+ asynchronous operations that will cancel cooperatively with this workflow.</p><p class='fsdocs-returns'><p>Returns: An asynchronous computation capable of retrieving the CancellationToken from a computation
+ expression.</p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1081-1081" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Catch">
+            <div>
+              <code onmouseout="hideTip(event, '1163', 1163)" onmouseover="showTip(event, '1163', 1163)">
+                <code><span>Async.Catch<span><span>(<span>computation</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1163">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Catch<span><span>(<span>computation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-2.html">Choice</a>&lt;<span>'T,&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-exn.html">exn</a></span>&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that executes <code>computation</code>.
+ If this computation completes successfully then return <code>Choice1Of2</code> with the returned
+ value. If this computation raises an exception before it completes then return <code>Choice2Of2</code>
+ with the raised exception.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>The input computation that returns the type T.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A computation that returns a choice of type T or exception.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-fsharpchoice-2.html">Choice</a>&lt;<span>'T,&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-exn.html">exn</a></span>&gt;</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1129-1129" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Choice">
+            <div>
+              <code onmouseout="hideTip(event, '1164', 1164)" onmouseover="showTip(event, '1164', 1164)">
+                <code><span>Async.Choice<span><span>(<span>computations</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1164">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Choice<span><span>(<span>computations</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that executes all given asynchronous computations in parallel, 
+ returning the result of the first succeeding computation (one whose result is 'Some x').
+ If all child computations complete with None, the parent computation also returns None.</p><p class='fsdocs-remarks'>
+ If any child computation raises an exception, then the overall computation will trigger an 
+ exception, and cancel the others. 
+
+ The overall computation will respond to cancellation while executing the child computations.
+ If cancelled, the computation will cancel any remaining child computations but will still wait
+ for the other child computations to complete.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computations</span></dt><dd><p>A sequence of computations to be parallelized.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A computation that returns the first succeeding computation.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computations
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-option-1.html">option</a></span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1270-1270" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="DefaultCancellationToken">
+            <div>
+              <code onmouseout="hideTip(event, '1165', 1165)" onmouseover="showTip(event, '1165', 1165)">
+                <code><span>Async.DefaultCancellationToken</span></code>
+              </code>
+              <div class="fsdocs-tip" id="1165">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.DefaultCancellationToken</span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Gets the default cancellation token for executing asynchronous computations.</p><p class='fsdocs-returns'><p>Returns: The default CancellationToken.</p>
+            <br/>
+            Return Type: 
+            <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1116-1116" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FromBeginEnd">
+            <div>
+              <code onmouseout="hideTip(event, '1166', 1166)" onmouseover="showTip(event, '1166', 1166)">
+                <code><span>Async.FromBeginEnd<span><span>(<span>arg1,&#32;arg2,&#32;arg3,&#32;beginAction,&#32;endAction,&#32;?cancelAction</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1166">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.FromBeginEnd<span><span>(<span>arg1,&#32;arg2,&#32;arg3,&#32;beginAction,&#32;endAction,&#32;?cancelAction</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg1
+                      </b>
+                      :
+                      <code>'Arg1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arg2
+                      </b>
+                      :
+                      <code>'Arg2</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arg3
+                      </b>
+                      :
+                      <code>'Arg3</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        beginAction
+                      </b>
+                      :
+                      <code><span><span>'Arg1&#32;*&#32;'Arg2&#32;*&#32;'Arg3&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        endAction
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancelAction
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation in terms of a Begin/End pair of actions in 
+ the style used in .NET 2.0 APIs.</p><p class='fsdocs-remarks'>The computation will respond to cancellation while waiting for the completion
+ of the operation. If a cancellation occurs, and <code>cancelAction</code> is specified, then it is 
+ executed, and the computation continues to wait for the completion of the operation.
+ 
+ If <code>cancelAction</code> is not specified, then cancellation causes the computation
+ to stop immediately, and subsequent invocations of the callback are ignored.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>arg1</span></dt><dd><p>The first argument for the operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>arg2</span></dt><dd><p>The second argument for the operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>arg3</span></dt><dd><p>The third argument for the operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>beginAction</span></dt><dd><p>The function initiating a traditional CLI asynchronous operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>endAction</span></dt><dd><p>The function completing a traditional CLI asynchronous operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancelAction</span></dt><dd><p>An optional function to be executed when a cancellation is requested.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation wrapping the given Begin/End functions.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg1
+                </span>
+                :
+                <code>'Arg1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg2
+                </span>
+                :
+                <code>'Arg2</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg3
+                </span>
+                :
+                <code>'Arg3</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  beginAction
+                </span>
+                :
+                <code><span><span>'Arg1&#32;*&#32;'Arg2&#32;*&#32;'Arg3&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  endAction
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancelAction
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1584-1584" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FromBeginEnd">
+            <div>
+              <code onmouseout="hideTip(event, '1167', 1167)" onmouseover="showTip(event, '1167', 1167)">
+                <code><span>Async.FromBeginEnd<span><span>(<span>arg1,&#32;arg2,&#32;beginAction,&#32;endAction,&#32;?cancelAction</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1167">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.FromBeginEnd<span><span>(<span>arg1,&#32;arg2,&#32;beginAction,&#32;endAction,&#32;?cancelAction</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg1
+                      </b>
+                      :
+                      <code>'Arg1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        arg2
+                      </b>
+                      :
+                      <code>'Arg2</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        beginAction
+                      </b>
+                      :
+                      <code><span><span>'Arg1&#32;*&#32;'Arg2&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        endAction
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancelAction
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+ Creates an asynchronous computation in terms of a Begin/End pair of actions in 
+ the style used in .NET 2.0 APIs.</p><p class='fsdocs-remarks'>The computation will respond to cancellation while waiting for the completion
+ of the operation. If a cancellation occurs, and <code>cancelAction</code> is specified, then it is 
+ executed, and the computation continues to wait for the completion of the operation.
+ 
+ If <code>cancelAction</code> is not specified, then cancellation causes the computation
+ to stop immediately, and subsequent invocations of the callback are ignored.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>arg1</span></dt><dd><p>The first argument for the operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>arg2</span></dt><dd><p>The second argument for the operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>beginAction</span></dt><dd><p>The function initiating a traditional CLI asynchronous operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>endAction</span></dt><dd><p>The function completing a traditional CLI asynchronous operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancelAction</span></dt><dd><p>An optional function to be executed when a cancellation is requested.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation wrapping the given Begin/End functions.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg1
+                </span>
+                :
+                <code>'Arg1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg2
+                </span>
+                :
+                <code>'Arg2</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  beginAction
+                </span>
+                :
+                <code><span><span>'Arg1&#32;*&#32;'Arg2&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  endAction
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancelAction
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1581-1581" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FromBeginEnd">
+            <div>
+              <code onmouseout="hideTip(event, '1168', 1168)" onmouseover="showTip(event, '1168', 1168)">
+                <code><span>Async.FromBeginEnd<span><span>(<span>arg,&#32;beginAction,&#32;endAction,&#32;?cancelAction</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1168">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.FromBeginEnd<span><span>(<span>arg,&#32;beginAction,&#32;endAction,&#32;?cancelAction</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        arg
+                      </b>
+                      :
+                      <code>'Arg1</code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        beginAction
+                      </b>
+                      :
+                      <code><span><span>'Arg1&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        endAction
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancelAction
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+  Creates an asynchronous computation in terms of a Begin/End pair of actions in 
+  the style used in .NET 2.0 APIs.
+ </p><p class='fsdocs-remarks'>The computation will respond to cancellation while waiting for the completion
+ of the operation. If a cancellation occurs, and <code>cancelAction</code> is specified, then it is 
+ executed, and the computation continues to wait for the completion of the operation.
+
+  If <code>cancelAction</code> is not specified, then cancellation causes the computation
+  to stop immediately, and subsequent invocations of the callback are ignored.
+</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>arg</span></dt><dd><p>The argument for the operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>beginAction</span></dt><dd><p>The function initiating a traditional CLI asynchronous operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>endAction</span></dt><dd><p>The function completing a traditional CLI asynchronous operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancelAction</span></dt><dd><p>An optional function to be executed when a cancellation is requested.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation wrapping the given Begin/End functions.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  arg
+                </span>
+                :
+                <code>'Arg1</code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  beginAction
+                </span>
+                :
+                <code><span><span>'Arg1&#32;*&#32;<a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  endAction
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancelAction
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1578-1578" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FromBeginEnd">
+            <div>
+              <code onmouseout="hideTip(event, '1169', 1169)" onmouseover="showTip(event, '1169', 1169)">
+                <code><span>Async.FromBeginEnd<span><span>(<span>beginAction,&#32;endAction,&#32;?cancelAction</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1169">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.FromBeginEnd<span><span>(<span>beginAction,&#32;endAction,&#32;?cancelAction</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        beginAction
+                      </b>
+                      :
+                      <code><span><span><a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        endAction
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancelAction
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+  Creates an asynchronous computation in terms of a Begin/End pair of actions in 
+  the style used in CLI APIs.
+ </p><p class='fsdocs-remarks'>
+ The computation will respond to cancellation while waiting for the completion
+ of the operation. If a cancellation occurs, and <code>cancelAction</code> is specified, then it is 
+ executed, and the computation continues to wait for the completion of the operation.
+ 
+ If <code>cancelAction</code> is not specified, then cancellation causes the computation
+ to stop immediately, and subsequent invocations of the callback are ignored.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>beginAction</span></dt><dd><p>The function initiating a traditional CLI asynchronous operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>endAction</span></dt><dd><p>The function completing a traditional CLI asynchronous operation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancelAction</span></dt><dd><p>An optional function to be executed when a cancellation is requested.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation wrapping the given Begin/End functions.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  beginAction
+                </span>
+                :
+                <code><span><span><a href="https://docs.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a>&#32;*&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html">obj</a></span>&#32;->&#32;<a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  endAction
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a>&#32;->&#32;'T</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancelAction
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1520-1520" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="FromContinuations">
+            <div>
+              <code onmouseout="hideTip(event, '1170', 1170)" onmouseover="showTip(event, '1170', 1170)">
+                <code><span>Async.FromContinuations<span><span>(<span>callback</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1170">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.FromContinuations<span><span>(<span>callback</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        callback
+                      </b>
+                      :
+                      <code><span><span><span>(<span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span>)</span>&#32;*&#32;<span>(<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-exn.html">exn</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span>)</span>&#32;*&#32;<span>(<span><a href="https://docs.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span>)</span></span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that captures the current
+ success, exception and cancellation continuations. The callback must 
+ eventually call exactly one of the given continuations.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>callback</span></dt><dd><p>The function that accepts the current success, exception, and cancellation
+ continuations.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation that provides the callback with the current continuations.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  callback
+                </span>
+                :
+                <code><span><span><span>(<span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span>)</span>&#32;*&#32;<span>(<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-exn.html">exn</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span>)</span>&#32;*&#32;<span>(<span><a href="https://docs.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span>)</span></span>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1085-1085" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Ignore">
+            <div>
+              <code onmouseout="hideTip(event, '1171', 1171)" onmouseover="showTip(event, '1171', 1171)">
+                <code><span>Async.Ignore<span><span>(<span>computation</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1171">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Ignore<span><span>(<span>computation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that runs the given computation and ignores 
+ its result.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>The input computation.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A computation that is equivalent to the input computation, but disregards the result.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1637-1637" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="OnCancel">
+            <div>
+              <code onmouseout="hideTip(event, '1172', 1172)" onmouseover="showTip(event, '1172', 1172)">
+                <code><span>Async.OnCancel<span><span>(<span>interruption</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1172">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.OnCancel<span><span>(<span>interruption</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        interruption
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Generates a scoped, cooperative cancellation handler for use within an asynchronous workflow.</p><p class='fsdocs-remarks'>For example,
+     <code>async { use! holder = Async.OnCancel interruption ... }</code> 
+ generates an asynchronous computation where, if a cancellation happens any time during 
+ the execution of the asynchronous computation in the scope of <code>holder</code>, then action 
+ <code>interruption</code> is executed on the thread that is performing the cancellation. This can 
+ be used to arrange for a computation to be asynchronously notified that a cancellation 
+ has occurred, e.g. by setting a flag, or deregistering a pending I/O action.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>interruption</span></dt><dd><p>The function that is executed on the thread performing the
+ cancellation.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation that triggers the interruption if it is cancelled
+ before being disposed.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  interruption
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://docs.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1674-1674" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Parallel">
+            <div>
+              <code onmouseout="hideTip(event, '1173', 1173)" onmouseover="showTip(event, '1173', 1173)">
+                <code><span>Async.Parallel<span><span>(<span>computations,&#32;?maxDegreeOfParallelism</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1173">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Parallel<span><span>(<span>computations,&#32;?maxDegreeOfParallelism</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?maxDegreeOfParallelism
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T[]</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that executes all the given asynchronous computations,
+ initially queueing each as work items and using a fork/join pattern.</p><p class='fsdocs-remarks'>If all child computations succeed, an array of results is passed to the success continuation.
+
+ If any child computation raises an exception, then the overall computation will trigger an
+ exception, and cancel the others.
+
+ The overall computation will respond to cancellation while executing the child computations.
+ If cancelled, the computation will cancel any remaining child computations but will still wait
+ for the other child computations to complete.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computations</span></dt><dd><p>A sequence of distinct computations to be parallelized.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A computation that returns an array of values from the sequence of input computations.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computations
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?maxDegreeOfParallelism
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T[]</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1158-1158" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Parallel">
+            <div>
+              <code onmouseout="hideTip(event, '1174', 1174)" onmouseover="showTip(event, '1174', 1174)">
+                <code><span>Async.Parallel<span><span>(<span>computations</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1174">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Parallel<span><span>(<span>computations</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T[]</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that executes all the given asynchronous computations, 
+ initially queueing each as work items and using a fork/join pattern.</p><p class='fsdocs-remarks'>If all child computations succeed, an array of results is passed to the success continuation.
+ 
+ If any child computation raises an exception, then the overall computation will trigger an 
+ exception, and cancel the others. 
+
+ The overall computation will respond to cancellation while executing the child computations.
+ If cancelled, the computation will cancel any remaining child computations but will still wait
+ for the other child computations to complete.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computations</span></dt><dd><p>A sequence of distinct computations to be parallelized.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A computation that returns an array of values from the sequence of input computations.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computations
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T[]</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1156-1156" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="RunSynchronously">
+            <div>
+              <code onmouseout="hideTip(event, '1175', 1175)" onmouseover="showTip(event, '1175', 1175)">
+                <code><span>Async.RunSynchronously<span><span>(<span>computation,&#32;?timeout,&#32;?cancellationToken</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1175">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.RunSynchronously<span><span>(<span>computation,&#32;?timeout,&#32;?cancellationToken</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?timeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancellationToken
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code>'T</code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Runs the asynchronous computation and await its result.</p><p class='fsdocs-remarks'>If an exception occurs in the asynchronous computation then an exception is re-raised by this
+ function.
+        
+ If no cancellation token is provided then the default cancellation token is used.
+
+ The timeout parameter is given in milliseconds.  A value of -1 is equivalent to
+ System.Threading.Timeout.Infinite.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>The computation to run.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>timeout</span></dt><dd><p>The amount of time in milliseconds to wait for the result of the
+ computation before raising a <a href="https://docs.microsoft.com/dotnet/api/system.timeoutexception">TimeoutException</a>.  If no value is provided
+ for timeout then a default of -1 is used to correspond to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout">Timeout.Infinite</a>.
+ If a cancellable cancellationToken is provided, timeout parameter will be ignored</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancellationToken</span></dt><dd><p>The cancellation token to be associated with the computation.
+ If one is not supplied, the default cancellation token is used.</p></dd></dl><p class='fsdocs-returns'><p>Returns: The result of the computation.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?timeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancellationToken
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code>'T</code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1136-1136" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Sequential">
+            <div>
+              <code onmouseout="hideTip(event, '1176', 1176)" onmouseover="showTip(event, '1176', 1176)">
+                <code><span>Async.Sequential<span><span>(<span>computations</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1176">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Sequential<span><span>(<span>computations</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computations
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&gt;</span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T[]</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that executes all the given asynchronous computations sequentially.</p><p class='fsdocs-remarks'>If all child computations succeed, an array of results is passed to the success continuation.
+
+ If any child computation raises an exception, then the overall computation will trigger an
+ exception, and cancel the others.
+
+ The overall computation will respond to cancellation while executing the child computations.
+ If cancelled, the computation will cancel any remaining child computations but will still wait
+ for the other child computations to complete.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computations</span></dt><dd><p>A sequence of distinct computations to be run in sequence.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A computation that returns an array of values from the sequence of input computations.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computations
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html">seq</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&gt;</span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span>'T[]</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1268-1268" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Sleep">
+            <div>
+              <code onmouseout="hideTip(event, '1177', 1177)" onmouseover="showTip(event, '1177', 1177)">
+                <code><span>Async.Sleep<span><span>(<span>dueTime</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1177">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Sleep<span><span>(<span>dueTime</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        dueTime
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+  Creates an asynchronous computation that will sleep for the given time. This is scheduled
+  using a System.Threading.Timer object. The operation will not block operating system threads
+  for the duration of the wait.
+ </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>dueTime</span></dt><dd><p>The amount of time to sleep.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation that will sleep for the given time.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td><td>Thrown when the due time is negative.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  dueTime
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.timespan">TimeSpan</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1408-1408" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Sleep">
+            <div>
+              <code onmouseout="hideTip(event, '1178', 1178)" onmouseover="showTip(event, '1178', 1178)">
+                <code><span>Async.Sleep<span><span>(<span>millisecondsDueTime</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1178">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Sleep<span><span>(<span>millisecondsDueTime</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        millisecondsDueTime
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>
+  Creates an asynchronous computation that will sleep for the given time. This is scheduled
+  using a System.Threading.Timer object. The operation will not block operating system threads
+  for the duration of the wait.
+ </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>millisecondsDueTime</span></dt><dd><p>The number of milliseconds to sleep.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation that will sleep for the given time.</p><table class='fsdocs-exception-list'><tr><td><a href="https://docs.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td><td>Thrown when the due time is negative
+ and not infinite.</td></tr></table>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  millisecondsDueTime
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1405-1405" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="Start">
+            <div>
+              <code onmouseout="hideTip(event, '1179', 1179)" onmouseover="showTip(event, '1179', 1179)">
+                <code><span>Async.Start<span><span>(<span>computation,&#32;?cancellationToken</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1179">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.Start<span><span>(<span>computation,&#32;?cancellationToken</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancellationToken
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Starts the asynchronous computation in the thread pool. Do not await its result.</p><p class='fsdocs-remarks'>If no cancellation token is provided then the default cancellation token is used.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>The computation to run asynchronously.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancellationToken</span></dt><dd><p>The cancellation token to be associated with the computation.
+ If one is not supplied, the default cancellation token is used.</p></dd></dl>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancellationToken
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </li>
+            </ul>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1144-1144" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="StartAsTask">
+            <div>
+              <code onmouseout="hideTip(event, '1180', 1180)" onmouseover="showTip(event, '1180', 1180)">
+                <code><span>Async.StartAsTask<span><span>(<span>computation,&#32;?taskCreationOptions,&#32;?cancellationToken</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1180">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.StartAsTask<span><span>(<span>computation,&#32;?taskCreationOptions,&#32;?cancellationToken</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?taskCreationOptions
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.taskcreationoptions">TaskCreationOptions</a></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancellationToken
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Executes a computation in the thread pool.</p><p class='fsdocs-remarks'>If no cancellation token is provided then the default cancellation token is used.</p><p class='fsdocs-returns'><p>Returns: A <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a> that will be completed
+ in the corresponding state once the computation terminates (produces the result, throws exception or gets canceled)</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?taskCreationOptions
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.taskcreationoptions">TaskCreationOptions</a></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancellationToken
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1148-1148" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="StartChild">
+            <div>
+              <code onmouseout="hideTip(event, '1181', 1181)" onmouseover="showTip(event, '1181', 1181)">
+                <code><span>Async.StartChild<span><span>(<span>computation,&#32;?millisecondsTimeout</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1181">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.StartChild<span><span>(<span>computation,&#32;?millisecondsTimeout</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?millisecondsTimeout
+                      </b>
+                      :
+                      <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Starts a child computation within an asynchronous workflow. 
+ This allows multiple asynchronous computations to be executed simultaneously.</p><p class='fsdocs-remarks'>This method should normally be used as the immediate 
+ right-hand-side of a <code>let!</code> binding in an F# asynchronous workflow, that is,
+ <pre>
+        async { ...
+                let! completor1 = childComputation1 |> Async.StartChild  
+                let! completor2 = childComputation2 |> Async.StartChild  
+                ... 
+                let! result1 = completor1 
+                let! result2 = completor2 
+                ... }
+ </pre>
+ 
+ When used in this way, each use of <code>StartChild</code> starts an instance of <code>childComputation</code> 
+ and returns a completor object representing a computation to wait for the completion of the operation.
+ When executed, the completor awaits the completion of <code>childComputation</code>.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>The child computation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>millisecondsTimeout</span></dt><dd><p>The timeout value in milliseconds.  If one is not provided
+ then the default value of -1 corresponding to <a href="https://docs.microsoft.com/dotnet/api/system.threading.timeout">Timeout.Infinite</a>.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A new computation that waits for the input computation to finish.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?millisecondsTimeout
+                </span>
+                :
+                <code><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-int.html">int</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1643-1643" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="StartChildAsTask">
+            <div>
+              <code onmouseout="hideTip(event, '1182', 1182)" onmouseover="showTip(event, '1182', 1182)">
+                <code><span>Async.StartChildAsTask<span><span>(<span>computation,&#32;?taskCreationOptions</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1182">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.StartChildAsTask<span><span>(<span>computation,&#32;?taskCreationOptions</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?taskCreationOptions
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.taskcreationoptions">TaskCreationOptions</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation which starts the given computation as a <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a></p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?taskCreationOptions
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.taskcreationoptions">TaskCreationOptions</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1152-1152" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="StartImmediate">
+            <div>
+              <code onmouseout="hideTip(event, '1183', 1183)" onmouseover="showTip(event, '1183', 1183)">
+                <code><span>Async.StartImmediate<span><span>(<span>computation,&#32;?cancellationToken</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1183">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.StartImmediate<span><span>(<span>computation,&#32;?cancellationToken</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancellationToken
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Runs an asynchronous computation, starting immediately on the current operating system
+ thread.</p><p class='fsdocs-remarks'>If no cancellation token is provided then the default cancellation token is used.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>The asynchronous computation to execute.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancellationToken</span></dt><dd><p>The <code>CancellationToken</code> to associate with the computation.
+ The default is used if this parameter is not provided.</p></dd></dl>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancellationToken
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </li>
+            </ul>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1356-1356" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="StartImmediateAsTask">
+            <div>
+              <code onmouseout="hideTip(event, '1184', 1184)" onmouseover="showTip(event, '1184', 1184)">
+                <code><span>Async.StartImmediateAsTask<span><span>(<span>computation,&#32;?cancellationToken</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1184">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.StartImmediateAsTask<span><span>(<span>computation,&#32;?cancellationToken</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancellationToken
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Runs an asynchronous computation, starting immediately on the current operating system
+ thread, but also returns the execution as <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a></p><p class='fsdocs-remarks'>If no cancellation token is provided then the default cancellation token is used.
+ You may prefer using this method if you want to achive a similar behviour to async await in C# as 
+ async computation starts on the current thread with an ability to return a result.
+ </p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>The asynchronous computation to execute.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancellationToken</span></dt><dd><p>The <code>CancellationToken</code> to associate with the computation.
+ The default is used if this parameter is not provided.</p></dd></dl><p class='fsdocs-returns'><p>Returns: A <a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a> that will be completed
+ in the corresponding state once the computation terminates (produces the result, throws exception or gets canceled)</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancellationToken
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://docs.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1344-1344" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="StartWithContinuations">
+            <div>
+              <code onmouseout="hideTip(event, '1185', 1185)" onmouseover="showTip(event, '1185', 1185)">
+                <code><span>Async.StartWithContinuations<span><span>(<span>computation,&#32;continuation,&#32;exceptionContinuation,&#32;cancellationContinuation,&#32;?cancellationToken</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1185">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.StartWithContinuations<span><span>(<span>computation,&#32;continuation,&#32;exceptionContinuation,&#32;cancellationContinuation,&#32;?cancellationToken</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        continuation
+                      </b>
+                      :
+                      <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        exceptionContinuation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-exn.html">exn</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        cancellationContinuation
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        ?cancellationToken
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Runs an asynchronous computation, starting immediately on the current operating system
+ thread. Call one of the three continuations when the operation completes.</p><p class='fsdocs-remarks'>If no cancellation token is provided then the default cancellation token
+ is used.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>The asynchronous computation to execute.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>continuation</span></dt><dd><p>The function called on success.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>exceptionContinuation</span></dt><dd><p>The function called on exception.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancellationContinuation</span></dt><dd><p>The function called on cancellation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>cancellationToken</span></dt><dd><p>The <code>CancellationToken</code> to associate with the computation.
+ The default is used if this parameter is not provided.</p></dd></dl>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  continuation
+                </span>
+                :
+                <code><span>'T&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  exceptionContinuation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-exn.html">exn</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  cancellationContinuation
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  ?cancellationToken
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></code>
+              </li>
+            </ul>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1341-1341" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SwitchToContext">
+            <div>
+              <code onmouseout="hideTip(event, '1186', 1186)" onmouseover="showTip(event, '1186', 1186)">
+                <code><span>Async.SwitchToContext<span><span>(<span>syncContext</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1186">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.SwitchToContext<span><span>(<span>syncContext</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        syncContext
+                      </b>
+                      :
+                      <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.synchronizationcontext">SynchronizationContext</a></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that runs
+ its continuation using syncContext.Post. If syncContext is null 
+ then the asynchronous computation is equivalent to SwitchToThreadPool().</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>syncContext</span></dt><dd><p>The synchronization context to accept the posted computation.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation that uses the syncContext context to execute.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  syncContext
+                </span>
+                :
+                <code><a href="https://docs.microsoft.com/dotnet/api/system.threading.synchronizationcontext">SynchronizationContext</a></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1665-1665" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SwitchToNewThread">
+            <div>
+              <code onmouseout="hideTip(event, '1187', 1187)" onmouseover="showTip(event, '1187', 1187)">
+                <code><span>Async.SwitchToNewThread<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1187">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.SwitchToNewThread<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that creates a new thread and runs
+ its continuation in that thread.</p><p class='fsdocs-returns'><p>Returns: A computation that will execute on a new thread.</p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1639-1639" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="SwitchToThreadPool">
+            <div>
+              <code onmouseout="hideTip(event, '1188', 1188)" onmouseover="showTip(event, '1188', 1188)">
+                <code><span>Async.SwitchToThreadPool<span>()</span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1188">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.SwitchToThreadPool<span>()</span></span></code>
+                  <br/>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that queues a work item that runs
+ its continuation.</p><p class='fsdocs-returns'><p>Returns: A computation that generates a new work item in the thread pool.</p>
+            <br/>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a>&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1641-1641" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td class="fsdocs-member-name" id="TryCancelled">
+            <div>
+              <code onmouseout="hideTip(event, '1189', 1189)" onmouseover="showTip(event, '1189', 1189)">
+                <code><span>Async.TryCancelled<span><span>(<span>computation,&#32;compensation</span>)</span></span></span></code>
+              </code>
+              <div class="fsdocs-tip" id="1189">
+                <div class="member-tooltip">
+                  Full Usage: 
+                  <code><span>Async.TryCancelled<span><span>(<span>computation,&#32;compensation</span>)</span></span></span></code>
+                  <br/>
+                  <br/>
+                  Parameter Types: 
+                  <ul>
+                    <span>
+                      <b>
+                        computation
+                      </b>
+                      :
+                      <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                    </span>
+                    <br/>
+                    <span>
+                      <b>
+                        compensation
+                      </b>
+                      :
+                      <code><span><a href="https://docs.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+                    </span>
+                    <br/>
+                  </ul>
+                  <br/>
+                  <span>
+                    Return Type: 
+                    <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+                  </span>
+                  <br/>
+                </div>
+              </div>
+            </div>
+          </td>
+          <td class="fsdocs-xmldoc">
+            <p class='fsdocs-summary'>Creates an asynchronous computation that executes <code>computation</code>.
+ If this computation is cancelled before it completes then the computation generated by 
+ running <code>compensation</code> is executed.</p><dl  class='fsdocs-params'><dt class='fsdocs-param'><span class='fsdocs-param-name'>computation</span></dt><dd><p>The input asynchronous computation.</p></dd><dt class='fsdocs-param'><span class='fsdocs-param-name'>compensation</span></dt><dd><p>The function to be run if the computation is cancelled.</p></dd></dl><p class='fsdocs-returns'><p>Returns: An asynchronous computation that runs the compensation if the input computation
+ is cancelled.</p>
+            <br/>
+            Parameter Types: 
+            <ul>
+              <li>
+                <span class="fsdocs-param-name">
+                  computation
+                </span>
+                :
+                <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+              </li>
+              <li>
+                <span class="fsdocs-param-name">
+                  compensation
+                </span>
+                :
+                <code><span><a href="https://docs.microsoft.com/dotnet/api/system.operationcanceledexception">OperationCanceledException</a>&#32;->&#32;<a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-unit-0.html">unit</a></span></code>
+              </li>
+            </ul>
+            Return Type: 
+            <code><span><a href="https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html">Async</a>&lt;'T&gt;</span></code>
+            <br/>
+            <a href="https://github.com/dotnet/fsharp//tree/master/src/fsharp/FSharp.Core/async.fs#L1691-1691" class="fsdocs-source-link">
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github.png" class="normal"/>
+              <img src="https://fsharp.github.io/fsharp-core-docs/content/img/github-blue.png" class="hover"/>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+            
+        </div>
+
+        <!-- BEGIN SEARCH BOX: this adds support for the search box -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.css" />
+        <script type="text/javascript">var fsdocs_search_baseurl = 'https://fsharp.github.io/fsharp-core-docs/'</script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.8/lunr.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/JavaScript-autoComplete/1.0.4/auto-complete.min.js"></script>
+        <script type="text/javascript" src="https://fsharp.github.io/fsharp-core-docs/content/fsdocs-search.js"></script>
+        <!-- END SEARCH BOX: this adds support for the search box -->
+    </div>
+</body>
+
+</html>
+
